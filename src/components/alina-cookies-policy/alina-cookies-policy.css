@@ -1,0 +1,74 @@
+h1,
+h2,
+p {
+	margin: 0;
+}
+
+article {
+	background: #fff;
+	color: colorDarkNight;
+	display: grid;
+	grid-template-columns: auto 85px 85px 762px 85px 85px auto;
+}
+
+@media screen and (max-width: mqSmallLaptop) {
+	article {
+		grid-template-columns: auto 0 60px calc(100% - 60px * 2) 60px 0 auto;
+	}
+}
+
+@media screen and (max-width: mqPhone) {
+	article {
+		grid-template-columns: auto 0 20px calc(100% - 20px * 2) 20px 0 auto;
+	}
+}
+
+article > * {
+	grid-column: 4;
+}
+
+article > figure {
+	grid-column: 1/-1;
+	width: 100vw;
+	max-width: 100%;
+	margin: 2.2rem 0;
+}
+
+article > figure.hero {
+	margin: 0 0 1.2rem 0;
+}
+
+article > figure picture img {
+	max-width: 100%;
+	object-fit: contain;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 3.5rem;
+	letter-spacing: 0.008rem;
+	line-height: 0.9;
+	margin-bottom: 1.6rem;
+}
+
+h2 {
+	font-weight: 400;
+	font-size: 1.3rem;
+	margin-bottom: 1.6rem;
+}
+
+p {
+	font-size: 1.1rem;
+	font-weight: 300;
+	margin-bottom: 1.2rem;
+	line-height: 1.6;
+}
+
+ul {
+	margin: 0 0 1.2rem 0;
+	padding: 0;
+}
+
+ul li {
+	margin-bottom: 1rem;
+}

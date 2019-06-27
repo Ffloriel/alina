@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Alina Design System</title>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+  <script type="module" src="/build/alina.esm.js"></script>
+  <script nomodule src="/build/alina.js"></script>
+
+</head>
+
+<body>
+
+  <section class="container mx-auto">
+    <h1 class="font-sans text-4xl text-gray-900">Alina Design System</h1>
+
+    <h2 class="font-sans text-3xl text-gray-800">Message Form</h2>
+    <alina-message-form></alina-message-form>
+
+    <h2 class="font-sans text-3xl text-gray-800">Chat Message</h2>
+    <alina-chat-message text="This is a text message" date="Today" author="Floriel" avatar-src="" from-user>
+    </alina-chat-message>
+    <alina-chat-message text="This is a response" date="Today" author="Mr.F" avatar-src="" from-user="false">
+    </alina-chat-message>
+
+    <h2 class="font-sans text-3xl text-gray-800">Triloader</h2>
+    <alina-triloader></alina-triloader>
+
+  </section>
+
+  <section>
+    <h2 class="font-sans text-3xl text-gray-800">Legal Pages</h2>
+
+    <h3 class="font-sans text-2xl text-gray-800">Cookies Policy</h3>
+    <alina-cookies-policy
+      date="Thursday, June 27, 2019"
+      company-name="Lone Poster"
+      website-url="https://loneposter.com">
+    </alina-cookies-policy>
+
+    <h3 class="font-sans text-2xl text-gray-800">Privacy Policy</h3>
+    <alina-privacy-policy
+      date="Thursday, June 27, 2019"
+      company-name="Lone Poster"
+      website-url="https://loneposter.com">
+    </alina-privacy-policy>
+
+  </section>
+
+</body>
+
+</html>
