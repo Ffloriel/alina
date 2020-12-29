@@ -1,0 +1,20 @@
+@tailwind base;
+
+/* Write your own custom base styles here */
+
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* Your own custom utilities */
+
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500&display=swap');
+
+html {
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 300;
+}
