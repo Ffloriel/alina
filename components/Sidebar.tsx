@@ -34,52 +34,52 @@ export function Sidebar() {
             type="checkbox"
           ></input>
           <div className="category">
-            <Link href="/foundation/">
+            <Link href="/foundation/design-token">
               <a className="hover:bg-gray-200 px-8 py-1 rounded my-1 flex items-center">
                 Design tokens
               </a>
             </Link>
-            <Link href="/foundation/">
+            <Link href="/foundation/platform-scale">
               <a className="hover:bg-gray-200 px-8 py-1 rounded my-1 flex items-center">
                 Platform scale
               </a>
             </Link>
-            <Link href="/foundation/">
+            <Link href="/foundation/color">
               <a className="hover:bg-gray-200 px-8 py-1 rounded my-1 flex items-center">
                 Color
               </a>
             </Link>
-            <Link href="/foundation/">
+            <Link href="/foundation/typography">
               <a className="hover:bg-gray-200 px-8 py-1 rounded my-1 flex items-center">
                 Typography
               </a>
             </Link>
-            <Link href="/foundation/">
+            <Link href="/foundation/object-styles">
               <a className="hover:bg-gray-200 px-8 py-1 rounded my-1 flex items-center">
                 Object styles
               </a>
             </Link>
-            <Link href="/foundation/">
+            <Link href="/foundation/motion">
               <a className="hover:bg-gray-200 px-8 py-1 rounded my-1 flex items-center">
                 Motion
               </a>
             </Link>
-            <Link href="/foundation/">
+            <Link href="/foundation/iconography">
               <a className="hover:bg-gray-200 px-8 py-1 rounded my-1 flex items-center">
                 Iconography
               </a>
             </Link>
-            <Link href="/foundation/">
+            <Link href="/foundation/illustration">
               <a className="hover:bg-gray-200 px-8 py-1 rounded my-1 flex items-center">
                 Illustration
               </a>
             </Link>
-            <Link href="/foundation/">
+            <Link href="/foundation/inclusive-design">
               <a className="hover:bg-gray-200 px-8 py-1 rounded my-1 flex items-center">
                 Inclusive design
               </a>
             </Link>
-            <Link href="/foundation/">
+            <Link href="/foundation/international-design">
               <a className="hover:bg-gray-200 px-8 py-1 rounded my-1 flex items-center">
                 International design
               </a>
