@@ -1,8 +1,7 @@
-import Head from "next/head";
-
 import { Sidebar } from "components/Sidebar";
 
-export default function DesignToken() {
+
+export default function DesignTokens() {
   return (
     <div className="grid grid-cols-12 h-screen w-screen overflow-hidden">
       <Sidebar />
