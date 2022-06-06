@@ -19,7 +19,7 @@ export default function Principles() {
             <div className="md:w-1/3 mb-12 md:mb-0 px-6 md:px-2 flex flex-col">
               <img
                 className="w-full rounded"
-                src="https://spectrum.adobe.com/static/images/principles_rational@2x_6JDH4xfAzPf61Ab262ROcB_1571091065056.png"
+                src="https://spectrum.adobe.com/static/images/principles_rational@2x_1617048319517.png"
               />
               <h3 className="uppercase tracking-wide mt-5">Rational</h3>
               <p className="opacity-75 mt-5">
@@ -31,7 +31,7 @@ export default function Principles() {
             <div className="md:w-1/3 mb-12 md:mb-0 px-6 md:px-2 flex flex-col">
               <img
                 className="w-full rounded"
-                src="https://spectrum.adobe.com/static/images/principles_human@2x_58wXNbhoPEzwqTuG7wGMoo_1571091080838.png"
+                src="https://spectrum.adobe.com/static/images/principles_human@2x_1617048319534.png"
               />
               <h3 className="uppercase tracking-wide mt-5">Human</h3>
               <p className="opacity-75 mt-5">
@@ -44,7 +44,7 @@ export default function Principles() {
             <div className="md:w-1/3 mb-12 md:mb-0 px-6 md:px-2 flex flex-col">
               <img
                 className="w-full rounded"
-                src="https://spectrum.adobe.com/static/images/principles_focused@2x_5M4WfAj7wpz2h5rQ6kgSze_1571091092510.png"
+                src="https://spectrum.adobe.com/static/images/principles_focused@2x_1617048319551.png"
               />
               <h3 className="uppercase tracking-wide mt-5">Focused</h3>
               <p className="opacity-75 mt-5">

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="821" height="260" viewBox="0 0 821 260">
+  <defs>
+    <polygon id="chat-header-a" points="0 0 821 0 821 260 0 260"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="chat-header-b" fill="#fff">
+      <use xlink:href="#chat-header-a"/>
+    </mask>
+    <use fill="#000" fill-opacity=".05" xlink:href="#chat-header-a"/>
+    <g mask="url(#chat-header-b)" opacity=".02">
+      <g transform="translate(0 -132)">
+        <polygon fill="#000" points="581 372 387 372 387 186"/>
+        <polygon fill="#000" points="291 279 194 279 194 186"/>
+        <polygon fill="#000" points="194 371 97 371 97 278"/>
+        <polygon fill="#000" points="97 279 0 279 0 186"/>
+        <polygon fill="#000" points="581 186 484 186 484 93"/>
+        <polygon fill="#000" points="484 186 387 186 387 93"/>
+        <polygon fill="#000" points="388 186 194 186 194 0"/>
+        <polygon fill="#000" points="194 186 97 186 97 93"/>
+      </g>
+    </g>
+  </g>
+</svg>

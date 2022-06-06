@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="59" height="56" viewBox="0 0 59 56">
+  <defs>
+    <filter id="icon-add-contact-a" width="233.3%" height="233.3%" x="-66.7%" y="-33.3%" filterUnits="objectBoundingBox">
+      <feOffset dy="20" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="10"/>
+      <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.05 0"/>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd" filter="url(#icon-add-contact-a)" transform="translate(15 13)">
+    <g stroke="#000" stroke-width="2" transform="translate(4 8)">
+      <path d="M7,4 C8.1,4 9,3.1 9,2 C9,0.9 8.1,0 7,0 C5.9,0 5,0.9 5,2 C5,3.1 5.9,4 7,4 L7,4 Z"/>
+      <path stroke-linecap="round" stroke-linejoin="round" d="M14,14 C12.9915848,9.33333333 10.6582515,7 7,7 C3.3750166,7 1.04168327,9.33333333 -9.43689571e-16,14 L14,14 Z"/>
+    </g>
+    <g stroke="#000" stroke-linecap="round" stroke-width="2" transform="translate(18 8)">
+      <path d="M4,0 L4,8"/>
+      <path d="M4,0 L4,8" transform="rotate(90 4 4)"/>
+    </g>
+    <rect width="30" height="30"/>
+  </g>
+</svg>

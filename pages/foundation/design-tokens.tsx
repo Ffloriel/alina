@@ -15,7 +15,7 @@ export default function DesignTokens() {
         <div className="flex flex-row -mx-2 mb-24 mt-12">
           <img
             className="w-full rounded"
-            src="https://spectrum.adobe.com/static/images/design-tokens_hero_desktop@2x_4IewHrPB0vOPrmLcSgUAvg_1571414778234.png"
+            src="https://spectrum.adobe.com/static/images/design-tokens_hero_desktop@2x_4IewHrPB0vOPrmLcSgUAvg_1611634790959.png"
           />
         </div>
 
