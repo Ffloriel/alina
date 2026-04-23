@@ -1,267 +1,145 @@
-import clsx from "clsx";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import React from "react";
-import { LogoFullHumanLetter } from "./LogoFullHumanLetter";
+'use client'
 
-export function Sidebar() {
-  const router = useRouter();
-  const [, category, page] = router.pathname.split("/");
+import * as Headless from '@headlessui/react'
+import clsx from 'clsx'
+import { LayoutGroup, motion } from 'motion/react'
+import React, { forwardRef, useId } from 'react'
+import { TouchTarget } from './button'
+import { Link } from './link'
+
+export function Sidebar({ className, ...props }: React.ComponentPropsWithoutRef<'nav'>) {
+  return <nav {...props} className={clsx(className, 'flex h-full min-h-0 flex-col')} />
+}
+
+export function SidebarHeader({ className, ...props }: React.ComponentPropsWithoutRef<'div'>) {
+  return (
+    <div
+      {...props}
+      className={clsx(
+        className,
+        'flex flex-col border-b border-zinc-950/5 p-5 dark:border-white/5 [&>[data-slot=section]+[data-slot=section]]:mt-4'
+      )}
+    />
+  )
+}
+
+export function SidebarBody({ className, ...props }: React.ComponentPropsWithoutRef<'div'>) {
+  return (
+    <div
+      {...props}
+      className={clsx(
+        className,
+        'flex flex-1 flex-col overflow-y-auto p-5 [&>[data-slot=section]+[data-slot=section]]:mt-10'
+      )}
+    />
+  )
+}
+
+export function SidebarFooter({ className, ...props }: React.ComponentPropsWithoutRef<'div'>) {
+  return (
+    <div
+      {...props}
+      className={clsx(
+        className,
+        'flex flex-col border-t border-zinc-950/5 p-5 dark:border-white/5 [&>[data-slot=section]+[data-slot=section]]:mt-4'
+      )}
+    />
+  )
+}
+
+export function SidebarSection({ className, ...props }: React.ComponentPropsWithoutRef<'div'>) {
+  let id = useId()
 
   return (
-    <>
-      <div className="col-span-2 bg-gray-100 py-8 flex flex-col overflow-hidden">
-        <div className="flex justify-center mb-12 px-4">
-          <LogoFullHumanLetter />
-        </div>
+    <LayoutGroup id={id}>
+      <div {...props} data-slot="section" className={clsx(className, 'flex flex-col gap-1.5')} />
+    </LayoutGroup>
+  )
+}
 
-        <nav className="flex flex-1 flex-col overflow-auto">
-          <div className="font-medium px-4 py-2 rounded">Alina</div>
-          <Link href="/principles">
-            <a
-              className={clsx(
-                "hover:bg-gray-200 px-8 py-1 rounded  flex items-center",
-                category === "principles" && "bg-gray-200"
-              )}
-            >
-              Principles
-            </a>
-          </Link>
-          <Link href="/whats-new">
-            <a
-              className={clsx(
-                "hover:bg-gray-200 px-8 py-1 rounded  flex items-center",
-                category === "whats-new" &&
-                  "bg-gray-200"
-              )}
-            >
-              What's new
-            </a>
-          </Link>
-          <label
-            htmlFor="foundation-input"
-            className="font-medium px-4 py-2 rounded"
-          >
-            Foundation
-          </label>
-          <input
-            id="foundation-input"
-            className="category-checkbox"
-            type="checkbox"
-            checked
-            readOnly
-          ></input>
-          <div className="category">
-            <Link href="/foundation/design-tokens">
-              <a
-                className={clsx(
-                  "hover:bg-gray-200 px-8 py-1 rounded  flex items-center",
-                  category === "foundation" &&
-                    page === "design-tokens" &&
-                    "bg-gray-200"
-                )}
-              >
-                Design tokens
-              </a>
-            </Link>
-            <Link href="/foundation/platform-scale">
-              <a
-                className={clsx(
-                  "hover:bg-gray-200 px-8 py-1 rounded  flex items-center",
-                  category === "foundation" &&
-                    page === "platform-scale" &&
-                    "bg-gray-200"
-                )}
-              >
-                Platform scale
-              </a>
-            </Link>
-            <Link href="/foundation/color">
-              <a
-                className={clsx(
-                  "hover:bg-gray-200 px-8 py-1 rounded  flex items-center",
-                  category === "foundation" &&
-                    page === "color" &&
-                    "bg-gray-200"
-                )}
-              >
-                Color
-              </a>
-            </Link>
-            <Link href="/foundation/typography">
-              <a
-                className={clsx(
-                  "hover:bg-gray-200 px-8 py-1 rounded  flex items-center",
-                  category === "foundation" &&
-                    page === "typography" &&
-                    "bg-gray-200"
-                )}
-              >
-                Typography
-              </a>
-            </Link>
-            <Link href="/foundation/object-styles">
-              <a
-                className={clsx(
-                  "hover:bg-gray-200 px-8 py-1 rounded  flex items-center",
-                  category === "foundation" &&
-                    page === "object-styles" &&
-                    "bg-gray-200"
-                )}
-              >
-                Object styles
-              </a>
-            </Link>
-            <Link href="/foundation/motion">
-              <a
-                className={clsx(
-                  "hover:bg-gray-200 px-8 py-1 rounded  flex items-center",
-                  category === "foundation" &&
-                    page === "motion" &&
-                    "bg-gray-200"
-                )}
-              >
-                Motion
-              </a>
-            </Link>
-            <Link href="/foundation/iconography">
-              <a
-                className={clsx(
-                  "hover:bg-gray-200 px-8 py-1 rounded  flex items-center",
-                  category === "foundation" &&
-                    page === "iconography" &&
-                    "bg-gray-200"
-                )}
-              >
-                Iconography
-              </a>
-            </Link>
-            <Link href="/foundation/illustration">
-              <a
-                className={clsx(
-                  "hover:bg-gray-200 px-8 py-1 rounded  flex items-center",
-                  category === "foundation" &&
-                    page === "illustration" &&
-                    "bg-gray-200"
-                )}
-              >
-                Illustration
-              </a>
-            </Link>
-            <Link href="/foundation/inclusive-design">
-              <a
-                className={clsx(
-                  "hover:bg-gray-200 px-8 py-1 rounded  flex items-center",
-                  category === "foundation" &&
-                    page === "inclusive-design" &&
-                    "bg-gray-200"
-                )}
-              >
-                Inclusive design
-              </a>
-            </Link>
-            <Link href="/foundation/international-design">
-              <a
-                className={clsx(
-                  "hover:bg-gray-200 px-8 py-1 rounded  flex items-center",
-                  category === "foundation" &&
-                    page === "international-design" &&
-                    "bg-gray-200"
-                )}
-              >
-                International design
-              </a>
-            </Link>
-          </div>
+export function SidebarDivider({ className, ...props }: React.ComponentPropsWithoutRef<'hr'>) {
+  return <hr {...props} className={clsx(className, 'my-4 border-t border-zinc-950/5 lg:-mx-4 dark:border-white/5')} />
+}
 
-          <label
-            htmlFor="content-input"
-            className="font-medium px-4 py-2 rounded"
-          >
-            Content
-          </label>
-          <input
-            id="content-input"
-            className="category-checkbox"
-            type="checkbox"
-            checked
-            readOnly
-          ></input>
-          <div className="category">
-            <Link href="/content/voice-and-tone">
-              <a
-                className={clsx(
-                  "hover:bg-gray-200 px-8 py-1 rounded  flex items-center",
-                  category === "content" &&
-                    page === "voice-and-tone" &&
-                    "bg-gray-200"
-                )}
-              >
-                Voice and tone
-              </a>
-            </Link>
-            <Link href="/content/grammar-and-mechanics">
-              <a
-                className={clsx(
-                  "hover:bg-gray-200 px-8 py-1 rounded  flex items-center",
-                  category === "content" &&
-                    page === "grammar-and-mechanics" &&
-                    "bg-gray-200"
-                )}
-              >
-                Grammar and mechanics
-              </a>
-            </Link>
-            <Link href="/content/in-product-word-list">
-              <a
-                className={clsx(
-                  "hover:bg-gray-200 px-8 py-1 rounded  flex items-center",
-                  category === "content" &&
-                    page === "in-product-word-list" &&
-                    "bg-gray-200"
-                )}
-              >
-                In-product word list
-              </a>
-            </Link>
-            <Link href="/content/writing-for-onboarding">
-              <a
-                className={clsx(
-                  "hover:bg-gray-200 px-8 py-1 rounded  flex items-center",
-                  category === "content" &&
-                    page === "writing-for-onboarding" &&
-                    "bg-gray-200"
-                )}
-              >
-                Writing for onboarding
-              </a>
-            </Link>
-          </div>
-        </nav>
-      </div>
-      <style jsx>{`
-        .category {
-          display: none;
-        }
-        .category-checkbox {
-          display: none;
-        }
-        .category-checkbox:checked + .category {
-          display: flex;
-          flex-direction: column;
-        }
+export function SidebarSpacer({ className, ...props }: React.ComponentPropsWithoutRef<'div'>) {
+  return <div aria-hidden="true" {...props} className={clsx(className, 'mt-8 flex-1')} />
+}
 
-        label {
-          cursor: pointer;
-        }
+export function SidebarHeading({ className, ...props }: React.ComponentPropsWithoutRef<'h3'>) {
+  return (
+    <h3
+      {...props}
+      className={clsx(className, 'mb-2 px-3 text-[11px]/6 font-light uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400')}
+    />
+  )
+}
 
-        nav {
-          display: flex;
-          flex-direction: column;
-          flex: 1;
-          overflow: auto;
-        }
-      `}</style>
-    </>
-  );
+export const SidebarItem = forwardRef(function SidebarItem(
+  {
+    current,
+    className,
+    children,
+    ...props
+  }: { current?: boolean; className?: string; children: React.ReactNode } & (
+    | ({ href?: never } & Omit<Headless.ButtonProps, 'as' | 'className'>)
+    | ({ href: string } & Omit<Headless.ButtonProps<typeof Link>, 'as' | 'className'>)
+  ),
+  ref: React.ForwardedRef<HTMLAnchorElement | HTMLButtonElement>
+) {
+  let classes = clsx(
+    // Base
+    'relative z-10 flex w-full items-center gap-3.5 rounded-xl px-3 py-3 text-left text-base/6 font-medium transition-colors sm:text-sm/5',
+    // Leading icon/icon-only
+    '*:data-[slot=icon]:size-6 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:fill-zinc-500 sm:*:data-[slot=icon]:size-5',
+    // Trailing icon (down chevron or similar)
+    '*:last:data-[slot=icon]:ml-auto *:last:data-[slot=icon]:size-5 sm:*:last:data-[slot=icon]:size-4',
+    // Avatar
+    '*:data-[slot=avatar]:-m-0.5 *:data-[slot=avatar]:size-7 sm:*:data-[slot=avatar]:size-6',
+    // Hover
+    'data-hover:bg-zinc-950/4 data-hover:*:data-[slot=icon]:fill-zinc-950',
+    // Active
+    'data-active:bg-zinc-950/6 data-active:*:data-[slot=icon]:fill-zinc-950',
+    // Current
+    'data-current:text-[#334019] data-current:*:data-[slot=icon]:fill-[#5a6a2e]',
+    // Dark mode
+    'dark:text-white dark:*:data-[slot=icon]:fill-zinc-400',
+    'dark:data-hover:bg-white/5 dark:data-hover:*:data-[slot=icon]:fill-white',
+    'dark:data-active:bg-white/5 dark:data-active:*:data-[slot=icon]:fill-white',
+    'dark:data-current:text-[#e7eccd] dark:data-current:*:data-[slot=icon]:fill-[#c4d38c]'
+  )
+
+  return (
+    <span className={clsx(className, 'relative')}>
+      {current && (
+        <motion.span
+          layoutId="current-indicator"
+          className="absolute inset-0 rounded-xl bg-[#eef2da] shadow-[0_14px_34px_-24px_rgba(90,106,46,0.8)] ring-1 ring-[#d2dba8] dark:bg-[#334019]/70 dark:ring-[#5a6a2e]/60"
+        />
+      )}
+      {typeof props.href === 'string' ? (
+        <Headless.CloseButton
+          as={Link}
+          {...props}
+          className={classes}
+          data-current={current ? 'true' : undefined}
+          ref={ref}
+        >
+          <TouchTarget>{children}</TouchTarget>
+        </Headless.CloseButton>
+      ) : (
+        <Headless.Button
+          {...props}
+          className={clsx('cursor-pointer', classes)}
+          data-current={current ? 'true' : undefined}
+          ref={ref}
+        >
+          <TouchTarget>{children}</TouchTarget>
+        </Headless.Button>
+      )}
+    </span>
+  )
+})
+
+export function SidebarLabel({ className, ...props }: React.ComponentPropsWithoutRef<'span'>) {
+  return <span {...props} className={clsx(className, 'truncate')} />
 }

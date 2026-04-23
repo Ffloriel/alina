@@ -1,72 +1,44 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES2017",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
+    "allowJs": false,
     "skipLibCheck": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
+    "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
+    "incremental": true,
+    "ignoreDeprecations": "6.0",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "baseUrl": ".",
     "paths": {
-      "@components/*": [
-        "./src/components/*"
-      ],
-      "@api/*": [
-        "./src/api/*"
-      ],
-      "@models/*": [
-        "./src/models/*"
-      ],
-      "@connectors/*": [
-        "./src/connectors/*"
-      ],
-      "@screens/*": [
-        "./src/screens/*"
-      ],
-      "@hooks/*": [
-        "./src/hooks/*"
-      ],
-      "@services/*": [
-        "./src/services/*"
-      ],
-      "@validation/*": [
-        "./src/validation/*"
-      ],
-      "@constants/*": [
-        "./src/constants/*"
-      ],
-      "@context/*": [
-        "./src/context/*"
-      ],
-      "@queries/*": [
-        "./src/queries/*"
-      ],
-      "@data/*": [
-        "./src/data/*"
-      ],
-      "@typeDefs/*": [
-        "./src/types/*"
+      "@/*": [
+        "./*"
       ]
-    },
-    "incremental": true
+    }
   },
-  "exclude": [
-    "node_modules"
-  ],
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".storybook/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }

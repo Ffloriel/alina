@@ -1,0 +1,24 @@
+import clsx from 'clsx'
+import type React from 'react'
+
+export function FullHumanLogo({
+  className,
+  title = 'Full Human',
+  ...props
+}: { className?: string; title?: string } & Omit<React.ComponentPropsWithoutRef<'svg'>, 'viewBox'>) {
+  return (
+    <svg
+      viewBox="0 0 71 57"
+      role="img"
+      aria-label={title}
+      {...props}
+      className={clsx(className, 'shrink-0')}
+    >
+      <path
+        d="M40.8 27.57v-3.6l5.7-8.92a13.06 13.06 0 014.64-4.81l5.69-6.59c2.51-.73 4.91-1.37 7.36-2l6-1.31-5.86 7.09-.18.05-.18.05-9 2.62-.18.05-.53.15-.17.06h-.15l-.73.21a11.67 11.67 0 00-6.61 7.82l.06 3.81v1.59c-.12 10.78.14 21.59-.26 32.28h-5.6V41.6H30.02v14.81h-5.75V18.73a11.67 11.67 0 00-6.61-7.81l-.73-.21h-.15l-.17-.05-.53-.15h-.18l-9-2.62-.18-.05-.17-.05L.68.69l6 1.32c2.45.58 4.85 1.22 7.36 1.95l5.69 6.59a13.06 13.06 0 014.64 4.81l1.87 3 .32.51 1 1.6 2.41 3.83V40.26H40.8V27.57zM14.63 24.1c-2.51-.73-4.91-1.37-7.35-2l-6-1.32 5.86 7.09.18.06h.17l5.42 1.58 8 2.16L14.62 24l.01.1zm41.56-.19l-6.29 7.67 8-2.16 5.42-1.58h.17l.18-.05 5.86-7.1-6 1.32c-2.43.53-4.83 1.17-7.34 1.9z"
+        fill="currentColor"
+        fillRule="evenodd"
+      />
+    </svg>
+  )
+}
