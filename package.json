@@ -8,6 +8,7 @@
     "start": "next start",
     "storybook": "storybook dev -p 6006 --disable-telemetry",
     "build-storybook": "storybook build --disable-telemetry",
+    "serve-storybook": "serve storybook-static",
     "typecheck": "tsc --noEmit",
     "test": "vitest --project=storybook",
     "test-storybook": "vitest --project=storybook"
