@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:storybook-public": "rm -rf public/storybook storybook-static && mkdir -p public/storybook && storybook build -o storybook-static --disable-telemetry && cp -R storybook-static/. public/storybook",
+    "build:vercel": "npm run build:storybook-public && next build",
     "start": "next start",
     "storybook": "storybook dev -p 6006 --disable-telemetry",
     "build-storybook": "storybook build --disable-telemetry",

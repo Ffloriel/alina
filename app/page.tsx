@@ -18,6 +18,8 @@ const highlights = [
   },
 ]
 
+const storybookHref = process.env.NODE_ENV === 'development' ? 'http://localhost:6006' : '/storybook'
+
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
@@ -36,8 +38,8 @@ export default function HomePage() {
               </Text>
             </div>
             <div className="flex flex-wrap items-center gap-4">
-              <Button href="http://localhost:6006" color="green">
-                Open Storybook locally
+              <Button href={storybookHref} color="green">
+                Open Storybook
               </Button>
               <p className="text-sm/6 text-zinc-500 dark:text-zinc-400">Storybook is now the source of truth for the Full Human design system.</p>
             </div>
