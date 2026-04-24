@@ -3,7 +3,7 @@ import { redirect } from 'next/navigation'
 import { Button } from '@/components/button'
 import { Input } from '@/components/input'
 import { StorybookAuthShell } from '@/components/storybook-auth-shell'
-import { allowedAuthEmail, buildAuthPageHref, getSafeNextPath, isAllowedAuthEmail, restrictedSignUpMessage } from '@/lib/auth/access'
+import { allowedAuthEmail, buildAuthPageHref, getSafeNextPath, isAllowedAuthEmail } from '@/lib/auth/access'
 import { auth } from '@/lib/auth/server'
 import { signUp } from './actions'
 
@@ -27,36 +27,27 @@ export default async function SignUpPage({ searchParams }: { searchParams: Searc
 
   return (
     <StorybookAuthShell
-      badgeLabel="Private Storybook"
-      heroTitle="Create the approved account for Storybook access."
-      heroDescription="Set up the current Alina Storybook account and keep the design system review flow inside the approved access list."
-      panelEyebrow="Account setup"
+      badgeLabel="Alina Storybook"
+      heroTitle="Create your Alina account."
+      heroDescription="Set your name and password to continue."
+      panelEyebrow="Account"
       panelTitle="Create account"
-      panelDescription="Complete the account once, then use it to sign in and review the private Storybook in future sessions."
-      notice={
-        <p>
-          Account creation is currently limited to <span className="font-medium">{allowedAuthEmail}</span>.
-        </p>
-      }
+      panelDescription="Create the account once, then sign in when needed."
       error={error}
       footer={
-        <div className="flex flex-col gap-3 text-sm sm:flex-row sm:items-center sm:justify-between">
+        <div className="text-sm">
           <Link className="text-zinc-600 underline-offset-4 transition-[color,text-decoration-color] hover:text-zinc-950 hover:underline dark:text-zinc-300 dark:hover:text-white" href={signInHref}>
             Already have an account?
           </Link>
-          <span className="text-zinc-500 dark:text-zinc-400">{restrictedSignUpMessage}</span>
         </div>
       }
     >
       <form action={signUp} className="space-y-4">
         <input type="hidden" name="next" value={nextPath} />
+        <input type="hidden" name="email" value={allowedAuthEmail} />
         <label className="block space-y-2">
           <span className="text-sm font-medium text-zinc-950 dark:text-white">Full name</span>
-          <Input aria-label="Full name" name="name" type="text" placeholder="Floriel" />
-        </label>
-        <label className="block space-y-2">
-          <span className="text-sm font-medium text-zinc-950 dark:text-white">Approved email</span>
-          <Input aria-label="Approved email" defaultValue={allowedAuthEmail} name="email" type="email" placeholder={allowedAuthEmail} />
+          <Input aria-label="Full name" name="name" type="text" />
         </label>
         <label className="block space-y-2">
           <span className="text-sm font-medium text-zinc-950 dark:text-white">Password</span>

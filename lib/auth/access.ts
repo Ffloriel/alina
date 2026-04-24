@@ -1,8 +1,8 @@
 const defaultStorybookPath = '/storybook'
 
 export const allowedAuthEmail = 'floriel@full-human.com'
-export const restrictedAccessMessage = `Access is currently limited to ${allowedAuthEmail}.`
-export const restrictedSignUpMessage = `Only ${allowedAuthEmail} can create an account right now.`
+export const restrictedAccessMessage = 'Use the correct account to continue.'
+export const restrictedSignUpMessage = 'Unable to create that account.'
 
 export function normalizeEmail(value: FormDataEntryValue | string | null | undefined) {
   return typeof value === 'string' ? value.trim().toLowerCase() : ''
