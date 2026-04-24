@@ -15,6 +15,7 @@
 # production
 /build
 /storybook-static
+/storybook-static-private
 /public/storybook
 
 # misc

@@ -5,7 +5,7 @@ import { NextResponse } from 'next/server'
 import { auth } from '@/lib/auth/server'
 import { buildAuthPageHref, isAllowedAuthEmail, restrictedAccessMessage } from '@/lib/auth/access'
 
-const storybookRoot = path.resolve(process.cwd(), 'public', 'storybook')
+const storybookRoot = path.resolve(process.cwd(), 'storybook-static-private')
 
 const contentTypes: Record<string, string> = {
   '.css': 'text/css; charset=utf-8',

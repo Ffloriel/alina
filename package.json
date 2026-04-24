@@ -5,12 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:storybook-public": "rm -rf public/storybook storybook-static && mkdir -p public/storybook && storybook build -o storybook-static --disable-telemetry && cp -R storybook-static/. public/storybook",
+    "build:storybook-public": "rm -rf public/storybook storybook-static storybook-static-private && storybook build -o storybook-static-private --disable-telemetry",
     "build:vercel": "npm run build:storybook-public && next build",
     "start": "next start",
     "storybook": "storybook dev -p 6006 --disable-telemetry",
     "build-storybook": "storybook build --disable-telemetry",
-    "serve-storybook": "serve storybook-static",
+    "serve-storybook": "serve storybook-static-private",
     "typecheck": "tsc --noEmit",
     "test": "vitest --project=storybook",
     "test-storybook": "vitest --project=storybook"

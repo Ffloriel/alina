@@ -13,6 +13,16 @@ const config: StorybookConfig = {
   typescript: {
     reactDocgen: 'react-docgen-typescript',
   },
+  viteFinal: async (config, { configType }) => {
+    if (configType !== 'PRODUCTION') {
+      return config
+    }
+
+    return {
+      ...config,
+      base: '/storybook/',
+    }
+  },
 }
 
 export default config
