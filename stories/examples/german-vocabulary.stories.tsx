@@ -75,43 +75,27 @@ function GermanVocabularyHomePage() {
   }
 
   return (
-    <GuidePage>
+    <GuidePage mobileBleed>
       <section className="border-b border-zinc-950/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(244,244,245,0.92))] pb-8 dark:border-white/10 dark:bg-[linear-gradient(135deg,rgba(10,10,10,0.98),rgba(24,24,27,0.92))]">
-        <header className="px-6 pt-5 lg:px-8">
-          <div className="flex flex-col gap-6 md:flex-row md:items-center">
+        <header className="px-4 pt-4 sm:px-6 sm:pt-5 lg:px-8">
+          <div className="flex flex-col gap-5 md:flex-row md:items-center">
             <div className="space-y-1">
               <p className="text-xs font-light uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">Floriel.dev</p>
               <p className="text-sm text-zinc-600 dark:text-zinc-300">German vocabulary practice</p>
             </div>
-            <Navbar className="hidden md:ml-auto md:flex md:flex-none">
-              <NavbarSection>
+            <Navbar className="md:ml-auto md:max-w-fit md:flex-none">
+              <NavbarSection className="grid w-full grid-cols-3 md:flex md:w-auto">
                 {sectionLinks.map((link) => (
-                  <NavbarItem key={link.href} href={link.href}>
+                  <NavbarItem key={link.href} fullWidth href={link.href}>
                     <NavbarLabel>{link.label}</NavbarLabel>
                   </NavbarItem>
                 ))}
               </NavbarSection>
             </Navbar>
           </div>
-
-          <div className="mt-4 md:hidden">
-            <div className="-mx-6 overflow-x-auto px-6 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              <div className="flex w-max min-w-full gap-2.5">
-                {sectionLinks.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className="shrink-0 rounded-full border border-zinc-950/10 bg-white/82 px-4 py-3 text-sm font-medium text-zinc-700 shadow-[0_18px_32px_-28px_rgba(23,23,23,0.45)] backdrop-blur-xl transition-colors hover:bg-zinc-50 dark:border-white/10 dark:bg-zinc-950/72 dark:text-zinc-200 dark:hover:bg-white/5"
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
         </header>
 
-        <div className="grid gap-12 px-6 py-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-14 lg:px-8 lg:py-12">
+        <div className="grid gap-10 px-4 py-8 sm:px-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-14 lg:px-8 lg:py-12">
           <div className="space-y-10">
             <div className="space-y-6">
               <Badge color="green">B2 practice session</Badge>
@@ -150,7 +134,7 @@ function GermanVocabularyHomePage() {
             </div>
           </div>
 
-          <aside className="space-y-5 border-l border-zinc-950/10 pl-6 dark:border-white/10">
+          <aside className="space-y-5 border-t border-zinc-950/10 pt-6 dark:border-white/10 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
             <p className="text-xs font-light uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">Session summary</p>
             <Heading level={2} className="text-3xl font-extralight tracking-tight text-zinc-950 dark:text-white">
               Build one focused practice round.
@@ -176,7 +160,7 @@ function GermanVocabularyHomePage() {
         </div>
       </section>
 
-      <section id="categories" className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-10">
+      <section id="categories" className="grid gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-10 lg:px-8">
         <div className="space-y-8">
           <div className="space-y-3">
             <p className="text-xs font-light uppercase tracking-[0.18em] text-zinc-500">Select categories</p>
@@ -274,7 +258,7 @@ function GermanVocabularyHomePage() {
         </div>
       </section>
 
-      <section id="progress" className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-10">
+      <section id="progress" className="grid gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-10 lg:px-8">
         <div className="space-y-8">
           <div className="space-y-3">
             <p className="text-xs font-light uppercase tracking-[0.18em] text-zinc-500">Learning progress</p>
@@ -309,7 +293,7 @@ function GermanVocabularyHomePage() {
           </div>
         </div>
 
-        <div className="space-y-4 border-l border-zinc-950/10 pl-6 dark:border-white/10">
+        <div className="space-y-4 border-t border-zinc-950/10 pt-6 dark:border-white/10 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
           <p className="text-xs font-light uppercase tracking-[0.16em] text-zinc-500">Learning rule</p>
           <Text className="text-sm/6 text-zinc-600 dark:text-zinc-300">
             Words are marked as learned after five correct answers in a row. Until then, the homepage keeps the status explicit so the next session feels grounded instead of abstract.
@@ -317,7 +301,7 @@ function GermanVocabularyHomePage() {
         </div>
       </section>
 
-      <section id="statistics" className="space-y-8">
+      <section id="statistics" className="space-y-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl space-y-3">
           <p className="text-xs font-light uppercase tracking-[0.18em] text-zinc-500">Vocabulary statistics</p>
           <Heading level={2} className="text-4xl font-extralight tracking-tight text-zinc-950 dark:text-white">

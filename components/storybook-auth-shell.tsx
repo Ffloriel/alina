@@ -51,7 +51,7 @@ export function StorybookAuthShell({
                   <div className="flex items-center gap-4">
                     <FullHumanLogo className="h-10 w-auto text-zinc-950 dark:text-white" />
                     <div>
-                      <p className="text-xs font-light uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">Full Human</p>
+                      <p className="text-xs font-light uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">Alina</p>
                       <p className="text-sm text-zinc-600 dark:text-zinc-300">Private Storybook access</p>
                     </div>
                   </div>
@@ -76,7 +76,7 @@ export function StorybookAuthShell({
                 <div className="rounded-3xl bg-zinc-950/95 p-6 text-white dark:bg-black/70">
                   <p className="text-xs font-light uppercase tracking-[0.16em] text-zinc-400">Current access policy</p>
                   <p className="mt-3 max-w-lg [font-family:var(--font-display)] text-3xl tracking-tight text-white">
-                    Protected access for the current Full Human design system workspace.
+                    Protected access for the current Alina design system workspace.
                   </p>
                   <p className="mt-4 max-w-lg text-sm/6 text-zinc-300">
                     Sign in to review the latest guide pages, components, and examples. Access is intentionally limited while the system is still being refined.
@@ -90,7 +90,7 @@ export function StorybookAuthShell({
                 <div className="mb-6 flex items-center gap-3 xl:hidden">
                   <FullHumanLogo className="h-8 w-auto text-zinc-950 dark:text-white" />
                   <div>
-                    <p className="text-xs font-light uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">Full Human</p>
+                    <p className="text-xs font-light uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">Alina</p>
                     <p className="text-sm text-zinc-600 dark:text-zinc-300">Storybook access</p>
                   </div>
                 </div>

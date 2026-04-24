@@ -21,13 +21,12 @@ export const Overview: Story = {
   render: () => (
     <GuidePage>
       <GuideHero
-        eyebrow="Full Human design system"
-        title={<>The Storybook guide is now the source of truth for the Full Human design system.</>}
+        eyebrow="Alina design system"
+        title={<>Alina: Full Human design system</>}
         summary={
           <>
-            Foundations, language, accessibility, patterns, and component behavior now live together in Storybook.
-            The preserved component library still carries the implementation, and this guide is the canonical reference
-            for how the system should look, sound, and behave.
+            Foundations, language, accessibility, patterns, and component behavior live together here.
+            The guide and the preserved component library stay aligned so the system is easy to review, use, and evolve.
           </>
         }
         actions={
@@ -59,7 +58,7 @@ export const Overview: Story = {
       <GuideSection
         eyebrow="What this guide covers"
         title="From philosophy to shipped UI"
-        summary="The Storybook structure mirrors the original design-system document so design decisions, writing rules, and implementation examples stay aligned."
+        summary="The structure mirrors the original design-system document so design decisions, writing rules, and implementation examples stay aligned."
       >
         <GuideCardGrid>
           <GuideCard title="Principles" eyebrow="Why" tone="accent">
@@ -84,7 +83,7 @@ export const Overview: Story = {
             <p>Live stories show how the preserved primitives combine into product-ready interfaces.</p>
           </GuideCard>
           <GuideCard title="Page examples" eyebrow="How it lands">
-            <p>Concrete marketing and sign-in pages prove the system with real hierarchy, branding, and task flows.</p>
+            <p>Concrete marketing, utility, and sign-in pages prove the system with real hierarchy, branding, and task flows.</p>
           </GuideCard>
           <GuideCard title="Tokens" eyebrow="What scales">
             <p>Semantic token mapping turns Tailwind values into a system language that can scale beyond the first version.</p>
@@ -94,8 +93,8 @@ export const Overview: Story = {
 
       <GuideSection
         eyebrow="Implementation stance"
-        title="One source, two surfaces"
-        summary="The guide and the component stories now replace the old split between a narrative markdown spec and an implementation library."
+        title="Guide and implementation"
+        summary="The guide and the component stories replace the old split between a narrative markdown spec and an implementation library."
       >
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_20rem]">
           <div className="rounded-3xl border border-zinc-950/10 bg-white/85 p-8 shadow-sm dark:border-white/10 dark:bg-zinc-950/70">
@@ -105,14 +104,14 @@ export const Overview: Story = {
               </Heading>
               <Text className="max-w-2xl text-base/7">
                 Designers get a readable design-system guide. Engineers get concrete implementations. The team avoids the
-                usual split between an aspirational document and a drifting component library because Storybook is now
-                the system record.
+                usual split between an aspirational document and a drifting component library because the guide and the
+                live stories move together.
               </Text>
             </div>
           </div>
           <GuideCallout title="Guiding rule" tone="notice">
-            If a component story and a guide rule disagree, update Storybook immediately. The design system only works
-            if the documented rule and the live implementation stay coupled.
+            If a component story and a guide rule disagree, update them together immediately so the documented rule and
+            the live implementation stay coupled.
           </GuideCallout>
         </div>
       </GuideSection>

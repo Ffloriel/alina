@@ -3,10 +3,26 @@ import type { ReactNode } from 'react'
 
 type Tone = 'neutral' | 'accent' | 'positive' | 'notice'
 
-export function GuidePage({ children }: { children: ReactNode }) {
+export function GuidePage({
+  children,
+  className,
+  mobileBleed = false,
+}: {
+  children: ReactNode
+  className?: string
+  mobileBleed?: boolean
+}) {
   return (
     <div className="min-h-screen bg-[var(--background)] font-sans text-[var(--foreground)]">
-      <div className="mx-auto flex w-full max-w-[88rem] flex-col gap-16 px-6 py-14 md:gap-20 lg:gap-24 lg:px-14 lg:py-20 xl:px-16">{children}</div>
+      <div
+        className={clsx(
+          'mx-auto flex w-full max-w-[88rem] flex-col gap-14 md:gap-20 lg:gap-24',
+          mobileBleed ? 'px-0 py-0 sm:px-6 sm:py-12 lg:px-14 lg:py-20 xl:px-16' : 'px-4 py-10 sm:px-6 sm:py-12 lg:px-14 lg:py-20 xl:px-16',
+          className
+        )}
+      >
+        {children}
+      </div>
     </div>
   )
 }
@@ -36,7 +52,7 @@ export function GuideHero({
         </div>
         {actions && <div className="flex flex-wrap gap-3">{actions}</div>}
       </div>
-      {aside && <div className="border-l border-zinc-950/10 pl-8 dark:border-white/10">{aside}</div>}
+      {aside && <div className="border-t border-zinc-950/10 pt-6 dark:border-white/10 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">{aside}</div>}
     </section>
   )
 }

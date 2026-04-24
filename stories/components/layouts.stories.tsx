@@ -47,7 +47,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'Application shell primitives for working screens. They should feel calm, architectural, and deliberately secondary to the content they frame.',
+          'Application shell primitives for working screens. They should feel calm, architectural, and deliberately secondary to the content they frame, with desktop sidebars collapsing into an expandable bottom-sheet shelf on mobile.',
       },
     },
   },
@@ -159,16 +159,23 @@ function ExampleNavbar({ currentLocation }: { currentLocation: CurrentLocation }
 }
 
 function ExampleStackedNavbar({ currentLocation }: { currentLocation: CurrentLocation }) {
+  const labels: Record<CurrentLocation, string> = {
+    Overview: 'Overview',
+    Editorial: 'Editorial review',
+    Signals: 'Regional signals',
+    Settings: 'Workspace settings',
+  }
+
   return (
     <div className="flex min-w-0 items-center gap-4">
       <div className="flex min-w-0 items-center gap-3 pl-1">
         <FullHumanLogo className="h-8 w-auto shrink-0 text-zinc-950 dark:text-white" />
-        <div className="hidden min-w-0 sm:block">
+        <div className="min-w-0">
           <p className="text-[11px] font-light uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">Full Human</p>
-          <p className="truncate text-sm text-zinc-600 dark:text-zinc-300">Editorial workspace</p>
+          <p className="truncate text-sm text-zinc-600 dark:text-zinc-300">{labels[currentLocation]}</p>
         </div>
       </div>
-      <Navbar className="min-h-[4.5rem] min-w-0 flex-1 px-2.5">
+      <Navbar className="hidden min-h-[4.5rem] min-w-0 flex-1 px-2.5 lg:flex">
         <NavbarSection>
           <NavbarItem href="#" current={currentLocation === 'Overview'}>
             <HomeIcon data-slot="icon" className="fill-current" />
@@ -197,9 +204,9 @@ function ExampleStackedNavbar({ currentLocation }: { currentLocation: CurrentLoc
 
 function ExampleSidebar({ currentLocation }: { currentLocation: CurrentLocation }) {
   return (
-    <Sidebar className="overflow-hidden rounded-2xl border border-zinc-950/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(244,244,245,0.94))] shadow-[0_30px_80px_-46px_rgba(23,23,23,0.28)] dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(24,24,27,0.98),rgba(10,10,10,0.96))] dark:shadow-[0_30px_80px_-46px_rgba(0,0,0,0.68)]">
-      <SidebarHeader className="border-zinc-950/10 bg-white/45 dark:border-white/10 dark:bg-white/5">
-        <div className="flex items-center gap-3 px-2 pb-3">
+    <Sidebar className="overflow-hidden rounded-2xl border border-zinc-950/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(244,244,245,0.94))] shadow-[0_30px_80px_-46px_rgba(23,23,23,0.28)] max-lg:rounded-none max-lg:border-0 max-lg:bg-transparent max-lg:shadow-none dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(24,24,27,0.98),rgba(10,10,10,0.96))] dark:shadow-[0_30px_80px_-46px_rgba(0,0,0,0.68)]">
+      <SidebarHeader className="border-zinc-950/10 bg-white/45 max-lg:bg-transparent dark:border-white/10 dark:bg-white/5 dark:max-lg:bg-transparent">
+        <div className="flex items-center gap-3 px-1.5 pb-2 sm:px-2 sm:pb-3">
           <FullHumanLogo className="h-8 w-auto text-zinc-950 dark:text-white" />
           <div className="min-w-0">
             <p className="text-[11px] font-light uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">Workspace</p>
@@ -231,7 +238,7 @@ function ExampleSidebar({ currentLocation }: { currentLocation: CurrentLocation 
           </SidebarItem>
         </SidebarSection>
       </SidebarBody>
-      <SidebarFooter className="border-zinc-950/10 dark:border-white/10">
+      <SidebarFooter className="hidden border-zinc-950/10 lg:flex dark:border-white/10">
         <div className="rounded-2xl bg-zinc-950 p-4 text-white dark:bg-black/70">
           <Badge color="green">Live review</Badge>
           <p className="mt-3 text-sm font-medium text-white">Seven markets changed this morning.</p>
@@ -429,7 +436,7 @@ function StackedLayoutInUsePage() {
 }
 
 export const SidebarLayout: StoryObj<ShellPlaygroundArgs> = {
-  ...withStoryDescription('Use the sidebar layout when navigation needs a persistent column next to a working surface that changes state throughout the session.'),
+  ...withStoryDescription('Use the sidebar layout when navigation needs a persistent column next to a working surface that changes state throughout the session. On mobile, the rail should collapse into a clear bottom shelf that expands into a sheet.'),
   args: {
     title: 'Layouts should support atmosphere and wayfinding without turning into chrome for its own sake.',
     description: 'The shell should feel composed, editorial, and calm while giving the active page clear ownership of the main narrative.',
@@ -452,7 +459,7 @@ export const SidebarLayout: StoryObj<ShellPlaygroundArgs> = {
 }
 
 export const SidebarLayoutInUse: Story = {
-  ...withStoryDescription('This page shows the sidebar layout used as a real monitoring workspace with persistent navigation and a changing review surface.'),
+  ...withStoryDescription('This page shows the sidebar layout used as a real monitoring workspace with persistent navigation and a changing review surface, plus the mobile bottom-sheet version of that navigation rail.'),
   render: () => (
     <SidebarLayoutComponent navbar={<CompactSidebarNavbar currentLocation="Signals" />} sidebar={<ExampleSidebar currentLocation="Signals" />}>
       <SidebarLayoutInUsePage />
@@ -465,7 +472,7 @@ export const SidebarLayoutInUse: Story = {
 }
 
 export const StackedLayout: StoryObj<ShellPlaygroundArgs> = {
-  ...withStoryDescription('Use the stacked layout when top navigation should stay present while the page body remains the dominant surface.'),
+  ...withStoryDescription('Use the stacked layout when top navigation should stay present while the page body remains the dominant surface. Any supporting sidebar content should collapse into the same mobile bottom-sheet shelf pattern.'),
   args: {
     title: 'Stacked layouts work when the page needs breadth more than a persistent utility rail.',
     description: 'This shell is useful for overview pages, editorial dashboards, and broader review screens where the content can take a wider shape.',
@@ -488,7 +495,7 @@ export const StackedLayout: StoryObj<ShellPlaygroundArgs> = {
 }
 
 export const StackedLayoutInUse: Story = {
-  ...withStoryDescription('This page shows the stacked layout used as a broader editorial overview screen with top-level navigation and a wide content body.'),
+  ...withStoryDescription('This page shows the stacked layout used as a broader editorial overview screen with top-level navigation, a wide content body, and the shared mobile sidebar shelf pattern.'),
   render: () => (
     <StackedLayoutComponent navbar={<ExampleStackedNavbar currentLocation="Editorial" />} sidebar={<ExampleSidebar currentLocation="Editorial" />}>
       <StackedLayoutInUsePage />

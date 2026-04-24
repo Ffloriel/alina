@@ -32,7 +32,7 @@ export default async function SignInPage({ searchParams }: { searchParams: Searc
   return (
     <StorybookAuthShell
       badgeLabel="Private Storybook"
-      heroTitle="Sign in to the Full Human design system workspace."
+      heroTitle="Sign in to the Alina design system workspace."
       heroDescription="Use the protected Storybook to review the latest components, guide pages, and examples without opening the library to the public."
       panelEyebrow="Account access"
       panelTitle="Sign in"

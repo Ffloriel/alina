@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { Description, ErrorMessage, Field, FieldGroup, Fieldset as FieldsetComponent, Label, Legend } from '../../components/fieldset'
 import { Input as InputComponent, InputGroup } from '../../components/input'
 import { Select as SelectComponent } from '../../components/select'
+import { Slider as SliderComponent } from '../../components/slider'
 import { Textarea as TextareaComponent } from '../../components/textarea'
 import { expect, within } from 'storybook/test'
 import { SearchIcon } from '../support/icons'
@@ -26,6 +27,7 @@ const meta = {
     Fieldset: FieldsetComponent,
     Input: InputComponent,
     Select: SelectComponent,
+    Slider: SliderComponent,
     Textarea: TextareaComponent,
   },
   parameters: {
@@ -33,7 +35,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'Core form primitives that share one grammar for labels, helper text, validation, spacing, and entry state.',
+          'Core form primitives that share one grammar for labels, helper text, validation, spacing, and entry state. Use this page as the overview, then work on the dedicated pages for text, number, date, range slider, select, and textarea inputs.',
       },
     },
   },

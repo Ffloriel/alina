@@ -114,33 +114,52 @@ function NavbarExamples() {
     <GuideSection
       eyebrow="Navbars"
       title="Navbars anchor the primary sections without getting noisy"
-      summary="Use navbars for the highest-level wayfinding and keep the item count disciplined enough to scan in one pass."
+      summary="Use navbars for the highest-level wayfinding, let grouped rows breathe on smaller screens, and keep the item count disciplined enough to scan in one pass."
     >
       <GuideDemoFrame>
-        <NavbarComponent>
-          <NavbarSection>
-            <NavbarItem href="#" current>
-              <HomeIcon data-slot="icon" className="fill-current" />
-              <NavbarLabel>Overview</NavbarLabel>
-            </NavbarItem>
-            <NavbarItem href="#">
-              <SparklesIcon data-slot="icon" className="fill-current" />
-              <NavbarLabel>Recommendations</NavbarLabel>
-            </NavbarItem>
-          </NavbarSection>
-          <NavbarSpacer />
-          <NavbarSection>
-            <NavbarItem href="#">
-              <BellIcon data-slot="icon" className="fill-current" />
-              <NavbarLabel>Updates</NavbarLabel>
-            </NavbarItem>
-            <NavbarDivider />
-            <NavbarItem href="#">
-              <SettingsIcon data-slot="icon" className="fill-current" />
-              <NavbarLabel>Preferences</NavbarLabel>
-            </NavbarItem>
-          </NavbarSection>
-        </NavbarComponent>
+        <div className="space-y-6">
+          <NavbarComponent>
+            <NavbarSection>
+              <NavbarItem href="#" current>
+                <HomeIcon data-slot="icon" className="fill-current" />
+                <NavbarLabel>Overview</NavbarLabel>
+              </NavbarItem>
+              <NavbarItem href="#">
+                <SparklesIcon data-slot="icon" className="fill-current" />
+                <NavbarLabel>Recommendations</NavbarLabel>
+              </NavbarItem>
+            </NavbarSection>
+            <NavbarSpacer />
+            <NavbarSection>
+              <NavbarItem href="#">
+                <BellIcon data-slot="icon" className="fill-current" />
+                <NavbarLabel>Updates</NavbarLabel>
+              </NavbarItem>
+              <NavbarDivider />
+              <NavbarItem href="#">
+                <SettingsIcon data-slot="icon" className="fill-current" />
+                <NavbarLabel>Preferences</NavbarLabel>
+              </NavbarItem>
+            </NavbarSection>
+          </NavbarComponent>
+
+          <div className="max-w-md space-y-3">
+            <p className="text-xs font-light uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">Mobile section pattern</p>
+            <NavbarComponent>
+              <NavbarSection className="grid w-full grid-cols-3 md:flex md:w-auto">
+                <NavbarItem fullWidth href="#" current>
+                  <NavbarLabel>Categories</NavbarLabel>
+                </NavbarItem>
+                <NavbarItem fullWidth href="#">
+                  <NavbarLabel>Method</NavbarLabel>
+                </NavbarItem>
+                <NavbarItem fullWidth href="#">
+                  <NavbarLabel>Journal</NavbarLabel>
+                </NavbarItem>
+              </NavbarSection>
+            </NavbarComponent>
+          </div>
+        </div>
       </GuideDemoFrame>
     </GuideSection>
   )
@@ -229,7 +248,7 @@ function SidebarExamples() {
     <GuideSection
       eyebrow="Sidebars"
       title="Sidebars are for dense information architecture, not overflow actions"
-      summary="Use a sidebar when sections need persistent visibility and the screen can support a stable secondary column."
+      summary="Use a sidebar when sections need persistent visibility and the screen can support a stable secondary column. In mobile application shells, collapse that rail into an expandable bottom sheet instead of forcing a full drawer."
     >
       <GuideDemoFrame>
         <div className="grid gap-8 lg:grid-cols-[18rem_minmax(0,1fr)]">
@@ -489,7 +508,7 @@ export const Sidebar: StoryObj<SidebarPlaygroundArgs> = {
       <GuideSection
         eyebrow="Controls"
         title="Sidebar playground"
-        summary="Use sidebars when the screen can support a stable secondary column with persistent section visibility."
+        summary="Use sidebars when the screen can support a stable secondary column with persistent section visibility. In responsive shells, pair them with a mobile bottom-sheet access pattern."
       >
         <GuideDemoFrame>
           <div className="grid gap-8 lg:grid-cols-[18rem_minmax(0,1fr)]">

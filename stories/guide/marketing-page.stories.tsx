@@ -90,9 +90,9 @@ const journalCards = [
 
 export const Overview: Story = {
   render: () => (
-    <GuidePage>
+    <GuidePage mobileBleed>
       <section className="border-b border-zinc-950/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(244,244,245,0.92))] pb-8 dark:border-white/10 dark:bg-[linear-gradient(135deg,rgba(10,10,10,0.98),rgba(24,24,27,0.92))]">
-        <header className="flex flex-col gap-6 px-6 pt-5 lg:flex-row lg:items-center lg:px-8">
+        <header className="flex flex-col gap-5 px-4 pt-4 sm:px-6 sm:pt-5 lg:flex-row lg:items-center lg:px-8">
           <div className="flex items-center gap-4">
             <FullHumanLogo className="h-9 w-auto text-zinc-950 dark:text-white" />
             <div>
@@ -100,22 +100,22 @@ export const Overview: Story = {
               <p className="text-sm text-zinc-600 dark:text-zinc-300">A concrete landing-page example built from the system</p>
             </div>
           </div>
-          <Navbar className="lg:ml-auto lg:flex-none">
-            <NavbarSection>
-              <NavbarItem href="#categories">
+          <Navbar className="lg:ml-auto lg:max-w-fit lg:flex-none">
+            <NavbarSection className="grid w-full grid-cols-3 md:flex md:w-auto">
+              <NavbarItem fullWidth href="#categories">
                 <NavbarLabel>Categories</NavbarLabel>
               </NavbarItem>
-              <NavbarItem href="#method">
+              <NavbarItem fullWidth href="#method">
                 <NavbarLabel>Method</NavbarLabel>
               </NavbarItem>
-              <NavbarItem href="#journal">
+              <NavbarItem fullWidth href="#journal">
                 <NavbarLabel>Journal</NavbarLabel>
               </NavbarItem>
             </NavbarSection>
           </Navbar>
         </header>
 
-        <div className="grid gap-12 px-6 py-8 lg:grid-cols-[minmax(0,1fr)_24rem] lg:gap-16 lg:px-8 lg:py-12">
+        <div className="grid gap-10 px-4 py-8 sm:px-6 lg:grid-cols-[minmax(0,1fr)_24rem] lg:gap-16 lg:px-8 lg:py-12">
           <div className="space-y-10">
             <div className="space-y-6">
               <Badge color="green">Concrete page example</Badge>
@@ -151,10 +151,10 @@ export const Overview: Story = {
             </div>
           </div>
 
-          <aside className="space-y-5 border-l border-zinc-950/10 pl-6 dark:border-white/10">
+          <aside className="space-y-5 border-t border-zinc-950/10 pt-6 dark:border-white/10 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
             <p className="text-xs font-light uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">Seasonal direction</p>
             <Heading level={2} className="text-3xl font-extralight tracking-tight text-zinc-950 dark:text-white">
-                Warm materials, sharp reasoning, less visual noise.
+              Warm materials, sharp reasoning, less visual noise.
             </Heading>
             <Text className="text-base/7 text-zinc-600 dark:text-zinc-300">
               The landing surface can feel editorial and tactile without losing the system’s insistence on clarity.
@@ -171,7 +171,7 @@ export const Overview: Story = {
         </div>
       </section>
 
-      <section id="categories" className="space-y-8 lg:space-y-10">
+      <section id="categories" className="space-y-8 px-4 sm:px-6 lg:px-8 lg:space-y-10">
         <div className="max-w-3xl space-y-3">
           <p className="text-xs font-light uppercase tracking-[0.18em] text-zinc-500">Curated categories</p>
           <Heading level={2} className="text-4xl font-extralight tracking-tight text-zinc-950 dark:text-white">
@@ -203,7 +203,7 @@ export const Overview: Story = {
         </div>
       </section>
 
-      <section id="method" className="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-10">
+      <section id="method" className="grid gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-10 lg:px-8">
         <div className="space-y-8 lg:space-y-10">
           <div className="rounded-2xl bg-[radial-gradient(circle_at_top_left,rgba(74,222,128,0.22),transparent_45%),linear-gradient(160deg,rgba(250,250,249,1),rgba(244,244,245,1))] p-5 dark:bg-[radial-gradient(circle_at_top_left,rgba(74,222,128,0.18),transparent_45%),linear-gradient(160deg,rgba(24,24,27,1),rgba(10,10,10,1))]">
             <p className="text-xs font-light uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">Featured recommendation</p>
@@ -242,7 +242,7 @@ export const Overview: Story = {
         </div>
       </section>
 
-      <section id="journal" className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-10">
+      <section id="journal" className="grid gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-10 lg:px-8">
         <div className="space-y-6 lg:space-y-8">
           <div className="space-y-3">
             <p className="text-xs font-light uppercase tracking-[0.18em] text-zinc-500">Journal and follow-through</p>

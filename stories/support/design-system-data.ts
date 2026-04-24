@@ -34,11 +34,13 @@ export const principleCards = [
       'Ship only what solves a real problem.',
       'Prefer familiar patterns over novelty.',
       'Use whitespace to make choices and content easier to parse.',
+      'On non-marketing pages, keep only sections that directly help complete the task.',
     ],
     dontList: [
       'Over-engineer components or states.',
       'Add “complete-looking” features that are not useful.',
       'Crowd pages with too many parallel priorities.',
+      'Turn utility pages into selling pitches with filler hero copy or support sections.',
     ],
   },
 ] as const
@@ -46,7 +48,7 @@ export const principleCards = [
 export const principleTable = [
   ['Clear', 'Use plain language, obvious hierarchy, and consistent patterns.', 'Add decorative elements, hide actions behind ambiguous icons, or use jargon.'],
   ['Human', 'Design for all abilities, respect attention, and write with empathy.', 'Assume context, ignore edge cases, or use dark patterns.'],
-  ['Purposeful', 'Include only what is necessary, give content room, and test assumptions.', 'Over-engineer, add “just in case” features, or clutter interfaces.'],
+  ['Purposeful', 'Include only what is necessary, give content room, and keep non-marketing pages task-first.', 'Over-engineer, add filler sections, or turn utility screens into pitches.'],
 ] as const
 
 export const accentScale = [
@@ -193,6 +195,11 @@ export const contentPrinciples = [
     doText: 'We recommend this because it scored highest in durability testing and costs 40% less than comparable options.',
     dontText: 'You will not believe how amazing this product is. Get yours before they sell out.',
   },
+  {
+    title: 'Utility pages stay task-first',
+    doText: 'Calories to kilojoules. Enter calories and get the result immediately.',
+    dontText: 'Unlock a better nutrition journey with our all-in-one calorie conversion experience.',
+  },
 ] as const
 
 export const grammarRules = [
@@ -240,7 +247,7 @@ export const componentCatalog = [
   {
     group: 'Forms and selection',
     rationale: 'Controls follow one visual grammar for borders, spacing, focus rings, and validation states.',
-    items: ['input', 'textarea', 'select', 'checkbox', 'radio', 'switch', 'combobox', 'listbox', 'fieldset', 'drop-zone'],
+    items: ['input', 'slider', 'textarea', 'select', 'checkbox', 'radio', 'segmented-control', 'selection-card', 'switch', 'combobox', 'listbox', 'fieldset', 'drop-zone'],
   },
   {
     group: 'Content and data',
@@ -514,7 +521,7 @@ export const screenReaderRules = [
 
 export const responsiveNavigation = [
   ['Desktop (md: and up)', 'Horizontal navigation with inline links'],
-  ['Mobile (below md:)', 'Hamburger trigger with a slide-down or drawer-style panel'],
+  ['Mobile (below md:)', 'An explicit bottom navigation shelf that expands into a sheet for dense menus'],
 ] as const
 
 export const tokenArchitecture = [
@@ -537,11 +544,11 @@ export const tokenNamingExamples = [
 ] as const
 
 export const navigationSpec = [
-  ['Position', 'Fixed, full width, z-50'],
-  ['Height', '80px (h-20)'],
+  ['Position', 'Inline by default, full width when it carries page sections'],
+  ['Height', 'Auto on mobile, compact single-row rhythm on wider screens'],
   ['Background', 'white/90 with backdrop-blur-sm'],
   ['Logo', 'text-sm font-light tracking-[0.3em] uppercase'],
-  ['Nav links', 'text-xs font-light tracking-[0.15em] uppercase'],
+  ['Nav links', 'Pill buttons that can wrap or switch to a section grid on mobile'],
   ['Link color', 'text-neutral-600 to text-black on hover'],
 ] as const
 
@@ -630,10 +637,13 @@ export const componentInventory = [
   ['progress-bar', 'Linear completion or loading feedback', 'Components/Data display/Progress bar'],
   ['loading-circle', 'Circular loading indicator for indeterminate work', 'Components/Feedback and overlays/Loading circle'],
   ['radio', 'Mutually exclusive option sets', 'Components/Choices'],
+  ['segmented-control', 'Compact mutually exclusive mode switching', 'Components/Choices/Segmented control'],
+  ['selection-card', 'Card-based single selection with supporting copy', 'Components/Choices/Selection cards'],
   ['select', 'Native select input styling', 'Components/Forms'],
   ['sidebar', 'Dense navigation and sectioned side rail', 'Components/Navigation'],
-  ['sidebar-layout', 'Desktop sidebar application shell', 'Components/Layouts'],
-  ['stacked-layout', 'Top-nav application shell', 'Components/Layouts'],
+  ['sidebar-layout', 'Desktop sidebar application shell with a mobile bottom-sheet menu', 'Components/Layouts'],
+  ['slider', 'Native range input styled as a slider', 'Components/Forms/Range slider'],
+  ['stacked-layout', 'Top-nav application shell with a mobile bottom-sheet menu', 'Components/Layouts'],
   ['switch', 'Immediate on/off preference controls', 'Components/Choices'],
   ['table', 'Structured data grids and linked rows', 'Components/Data display'],
   ['text', 'Body copy, strong text, inline links, and code', 'Components/Data display'],

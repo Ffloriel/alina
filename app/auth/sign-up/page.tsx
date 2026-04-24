@@ -29,7 +29,7 @@ export default async function SignUpPage({ searchParams }: { searchParams: Searc
     <StorybookAuthShell
       badgeLabel="Private Storybook"
       heroTitle="Create the approved account for Storybook access."
-      heroDescription="Set up the current Full Human Storybook account and keep the design system review flow inside the approved access list."
+      heroDescription="Set up the current Alina Storybook account and keep the design system review flow inside the approved access list."
       panelEyebrow="Account setup"
       panelTitle="Create account"
       panelDescription="Complete the account once, then use it to sign in and review the private Storybook in future sessions."

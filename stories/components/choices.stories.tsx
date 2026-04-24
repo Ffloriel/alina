@@ -5,6 +5,8 @@ import { Combobox as ComboboxComponent, ComboboxDescription, ComboboxLabel, Comb
 import { Description, Fieldset as FieldsetComponent, Label, Legend } from '../../components/fieldset'
 import { Listbox as ListboxComponent, ListboxDescription, ListboxLabel, ListboxOption } from '../../components/listbox'
 import { Radio as RadioComponent, RadioField, RadioGroup } from '../../components/radio'
+import { SegmentedControl as SegmentedControlComponent } from '../../components/segmented-control'
+import { SelectionCard as SelectionCardComponent } from '../../components/selection-card'
 import { Switch as SwitchComponent, SwitchField, SwitchGroup } from '../../components/switch'
 import { expect, userEvent, within } from 'storybook/test'
 import { GuideDemoFrame, GuidePage, GuideSection } from '../support/guide'
@@ -26,6 +28,8 @@ const meta = {
   component: CheckboxComponent,
   subcomponents: {
     Radio: RadioComponent,
+    SegmentedControl: SegmentedControlComponent,
+    SelectionCard: SelectionCardComponent,
     Switch: SwitchComponent,
     Combobox: ComboboxComponent,
     Listbox: ListboxComponent,
@@ -35,7 +39,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'Selection primitives for independent toggles, mutually exclusive choices, immediate preference state, and richer pickers.',
+          'Selection primitives for independent toggles, mutually exclusive choices, task-level segmented controls, card-based selection, immediate preference state, and richer pickers.',
       },
     },
   },

@@ -124,7 +124,7 @@ export const Components: Story = {
             <div className="flex items-center gap-4 rounded-2xl border border-zinc-950/10 bg-white/75 p-5 dark:border-white/10 dark:bg-zinc-900/70">
               <Avatar initials="FH" className="size-14 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300" />
               <div>
-                <p className="text-sm font-medium text-zinc-950 dark:text-white">Full Human system</p>
+                <p className="text-sm font-medium text-zinc-950 dark:text-white">Alina system</p>
                 <p className="text-sm/6 text-zinc-500 dark:text-zinc-400">Accessible, restrained, and purposeful by default.</p>
               </div>
             </div>

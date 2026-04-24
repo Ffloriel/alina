@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { principleCards, principleTable } from '../support/design-system-data'
-import { GuideCard, GuideCardGrid, GuideHero, GuideList, GuidePage, GuideSection, GuideTable } from '../support/guide'
+import { GuideCallout, GuideCard, GuideCardGrid, GuideHero, GuideList, GuidePage, GuideSection, GuideTable } from '../support/guide'
 
 const meta = {
   title: 'Guide/Principles',
@@ -48,6 +48,9 @@ export const Principles: Story = {
             </GuideCard>
           ))}
         </GuideCardGrid>
+        <GuideCallout title="Non-marketing page rule" tone="notice">
+          Marketing pages can persuade. Utility, settings, reference, dashboard, quiz, and account pages cannot. Every section on those pages must directly help the person complete the task.
+        </GuideCallout>
       </GuideSection>
 
       <GuideSection

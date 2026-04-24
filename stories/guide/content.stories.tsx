@@ -9,7 +9,7 @@ import {
   toneSpectrum,
   voiceTraits,
 } from '../support/design-system-data'
-import { GuideCard, GuideCardGrid, GuideDoDont, GuideHero, GuideList, GuidePage, GuideSection, GuideTable } from '../support/guide'
+import { GuideCallout, GuideCard, GuideCardGrid, GuideDoDont, GuideHero, GuideList, GuidePage, GuideSection, GuideTable } from '../support/guide'
 
 const meta = {
   title: 'Guide/Content',
@@ -28,7 +28,7 @@ export const Content: Story = {
       <GuideHero
         eyebrow="Content"
         title={<>Words are part of the interface, not decoration around it.</>}
-        summary="The design system treats language as a design surface. Copy should be direct, warm, specific, and transparent enough to build trust without sounding like marketing."
+        summary="The design system treats language as a design surface. Copy should be direct, warm, specific, and transparent enough to build trust without sounding like marketing unless the page is explicitly marketing."
       />
 
       <GuideSection
@@ -59,20 +59,25 @@ export const Content: Story = {
           <GuideCard title="Tone routing">
             <GuideList
               items={[
+                'Marketing page: welcoming and persuasive.',
                 'Homepage hero: welcoming and confident.',
                 'Product recommendation: confident and helpful.',
+                'Utility page: instructive and direct, never a pitch.',
                 'Care instructions: instructive and neutral.',
                 'Errors or empty states: reassuring and helpful.',
               ]}
             />
           </GuideCard>
         </GuideCardGrid>
+        <GuideCallout title="Utility page rule" tone="notice">
+          Outside marketing pages, every line of copy and every section must help the person complete the task. Remove filler, promotional framing, and support blocks that behave like a pitch instead of part of the workflow.
+        </GuideCallout>
       </GuideSection>
 
       <GuideSection
         eyebrow="Content principles"
         title="Structure writing for scanning first"
-        summary="The quickest way to keep product copy aligned with the system is to apply these five editorial rules to every paragraph, card, and recommendation."
+        summary="The quickest way to keep product copy aligned with the system is to apply these six editorial rules to every paragraph, card, and recommendation."
       >
         <div className="space-y-4">
           {contentPrinciples.map((principle) => (
