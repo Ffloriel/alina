@@ -37,6 +37,14 @@ function getContentType(filePath: string) {
   return contentTypes[path.extname(filePath).toLowerCase()] ?? 'application/octet-stream'
 }
 
+function addStorybookBaseHref(html: string) {
+  if (html.includes('<base ')) {
+    return html
+  }
+
+  return html.replace('<head>', '<head><base href="/storybook/" />')
+}
+
 async function resolveAssetPath(pathSegments?: string[]) {
   const requestedPath = pathSegments?.length ? path.join(...pathSegments) : 'index.html'
   let resolvedPath = path.resolve(storybookRoot, requestedPath)
@@ -77,7 +85,12 @@ async function handleStorybookRequest(request: NextRequest, context: StorybookRo
     return new NextResponse('Not found', { status: 404 })
   }
 
-  const body = includeBody ? await fs.readFile(assetPath) : null
+  let body: BodyInit | null = null
+
+  if (includeBody) {
+    const isRootIndex = (!requestedPath || requestedPath.length === 0) && assetPath.endsWith('index.html')
+    body = isRootIndex ? addStorybookBaseHref(await fs.readFile(assetPath, 'utf8')) : new Uint8Array(await fs.readFile(assetPath))
+  }
 
   return new NextResponse(body, {
     headers: {
