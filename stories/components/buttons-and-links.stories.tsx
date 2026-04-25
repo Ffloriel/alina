@@ -33,7 +33,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'Action primitives for dominant calls to action, compact status badges, and routing-friendly inline links.',
+          'Action primitives for dominant calls to action, compact status badges, and routing-friendly inline links. Corners stay restrained; pill and capsule treatments are out of bounds.',
       },
     },
   },
@@ -160,7 +160,7 @@ function ButtonExamples() {
     <GuideSection
       eyebrow="Actions"
       title="Buttons express hierarchy through weight, not noise"
-      summary="Full Human buttons keep the shape calm and use an olive accent, lighter type, spacing, and restrained motion to establish hierarchy without feeling harsh."
+      summary="Full Human buttons keep the shape calm and restrained. Use olive accent, lighter type, spacing, and restrained motion to establish hierarchy without turning controls into pills or capsules."
     >
       <GuideCardGrid columns={2}>
         <GuideDemoFrame>

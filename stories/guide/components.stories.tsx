@@ -46,6 +46,17 @@ const buttonAndLinkSnippet = `<a class="inline-flex items-center justify-center 
   Category name
 </a>`
 
+const installationSnippet = `This design system is not published on npm yet.
+
+Copy the component source you need from this repository into the consuming project.
+
+Start with:
+- /components
+
+Bring across any directly imported local primitives or utilities the copied component depends on.
+
+Then adapt app-specific routing, data fetching, and business logic inside the consuming project.`
+
 export const Components: Story = {
   render: () => (
     <GuidePage>
@@ -69,6 +80,25 @@ export const Components: Story = {
           ))}
         </GuideCardGrid>
         <GuideTable columns={['Component', 'Role', 'Documented in']} rows={componentInventory} />
+      </GuideSection>
+
+      <GuideSection
+        eyebrow="Installation"
+        title="Components are copied from this repository"
+        summary="The design system is not distributed as an npm package at the moment. Any project that adopts it should copy the component source from this repository, then keep that local copy aligned with the Storybook guidance."
+      >
+        <GuideCardGrid>
+          <GuideCard title="Current distribution" tone="accent">
+            <p>The canonical source lives in this repository. There is no published package to install from npm right now.</p>
+          </GuideCard>
+          <GuideCard title="Adoption rule">
+            <p>Copy the components you need into the consuming project, along with any directly imported local primitives or utilities they depend on.</p>
+          </GuideCard>
+        </GuideCardGrid>
+        <GuideCodeBlock language="txt" code={installationSnippet} />
+        <GuideCallout title="Implementation note" tone="notice">
+          Treat this repository as the source of truth. When the design system changes here, review the copied components in downstream projects and update them deliberately.
+        </GuideCallout>
       </GuideSection>
 
       <GuideSection

@@ -362,7 +362,7 @@ export const borderRadiusScale = [
   ['rounded-xl', '6px', 'Menus, cards, and content wrappers'],
   ['rounded-2xl', '8px', 'Large marketing panels and editorial callouts'],
   ['rounded-3xl', '10px', 'Rare showcase surfaces that need a slightly softer frame'],
-  ['rounded-full', '9999px', 'Circular controls only: avatars, radios, switches, and dots'],
+  ['rounded-full', '9999px', 'Circular controls only: avatars, radios, switches, and dots. Never use it for pill or capsule UI.'],
 ] as const
 
 export const borderStyles = [
@@ -548,7 +548,7 @@ export const navigationSpec = [
   ['Height', 'Auto on mobile, compact single-row rhythm on wider screens'],
   ['Background', 'white/90 with backdrop-blur-sm'],
   ['Logo', 'text-sm font-light tracking-[0.3em] uppercase'],
-  ['Nav links', 'Pill buttons that can wrap or switch to a section grid on mobile'],
+  ['Nav links', 'Compact links with restrained corners that can wrap or switch to a section grid on mobile; never use pill or capsule styling'],
   ['Link color', 'text-neutral-600 to text-black on hover'],
 ] as const
 

@@ -193,8 +193,8 @@ export const Foundations: Story = {
 
       <GuideSection
         eyebrow="Object styles"
-        title="Corners stay restrained and deliberate"
-        summary="Most surfaces stay in a tight 4px to 8px radius range. Full rounding is reserved for truly circular controls such as avatars, radios, switches, and progress dots."
+        title="Corners stay restrained and never become pills"
+        summary="Most surfaces stay in a tight 4px to 8px radius range. Pill and capsule shapes are out of bounds. Full rounding is reserved for truly circular controls such as avatars, radios, switches, and progress dots."
       >
         <GuideTable columns={['Token', 'Value', 'Usage']} rows={borderRadiusScale} />
         <GuideTable columns={['Context', 'Tailwind', 'Usage']} rows={borderStyles} />
