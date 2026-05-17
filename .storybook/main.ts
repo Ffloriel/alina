@@ -14,6 +14,9 @@ const config: StorybookConfig = {
     name: '@storybook/nextjs-vite',
     options: {},
   },
+  features: {
+    componentsManifest: true,
+  },
   docs: {
     defaultName: 'Docs',
   },

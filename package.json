@@ -19,6 +19,7 @@
     "@fontsource/instrument-serif": "^5.2.8",
     "@headlessui/react": "^2.2.10",
     "@neondatabase/auth": "^0.2.0-beta.1",
+    "@storybook/mcp": "^0.7.0",
     "clsx": "^2.1.1",
     "geist": "^1.7.0",
     "motion": "^12.38.0",

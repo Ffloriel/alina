@@ -20,6 +20,20 @@ Required environment variables:
 - `NEON_AUTH_BASE_URL`
 - `NEON_AUTH_COOKIE_SECRET`
 
+## Protected Storybook MCP On Vercel
+
+The Vercel deploy also exposes the Storybook MCP server at `/mcp`.
+
+For coding agents and other non-browser MCP clients, set this environment variable in Vercel:
+
+- `STORYBOOK_MCP_TOKEN`
+
+Then connect the MCP client to:
+
+- `https://alina.full-human.com/mcp`
+
+and send the token as a bearer token in the `Authorization` header.
+
 Storybook access is currently restricted in app code to `floriel@full-human.com`.
 
 ## Structure
