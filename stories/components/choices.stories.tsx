@@ -63,6 +63,7 @@ type ChoiceColor =
   | 'amber'
   | 'yellow'
   | 'lime'
+  | 'brand'
   | 'green'
   | 'emerald'
   | 'teal'
@@ -127,6 +128,7 @@ const choiceColorOptions: ChoiceColor[] = [
   'amber',
   'yellow',
   'lime',
+  'brand',
   'green',
   'emerald',
   'teal',
@@ -165,12 +167,12 @@ function CheckboxExamples() {
           </p>
           <CheckboxGroup className="mt-8">
             <CheckboxField>
-              <CheckboxComponent checked={newsletter} onChange={setNewsletter} color="green" />
+              <CheckboxComponent checked={newsletter} onChange={setNewsletter} color="brand" />
               <Label>Send release notes</Label>
               <Description>Monthly summary of updated recommendations and methodology changes.</Description>
             </CheckboxField>
             <CheckboxField>
-              <CheckboxComponent checked={affiliateFree} onChange={setAffiliateFree} color="green" />
+              <CheckboxComponent checked={affiliateFree} onChange={setAffiliateFree} color="brand" />
               <Label>Only show affiliate-free products</Label>
               <Description>Useful when trust and editorial independence are the main decision drivers.</Description>
             </CheckboxField>
@@ -198,17 +200,17 @@ function RadioExamples() {
           </p>
           <RadioGroup className="mt-8" value={tier} onChange={(value) => setTier(value as Tier)}>
             <RadioField>
-              <RadioComponent value="budget" color="green" />
+              <RadioComponent value="budget" color="brand" />
               <Label>Budget</Label>
               <Description>Prioritize dependable value over premium finishes.</Description>
             </RadioField>
             <RadioField>
-              <RadioComponent value="smart-value" color="green" />
+              <RadioComponent value="smart-value" color="brand" />
               <Label>Smart value</Label>
               <Description>Best balance of cost, longevity, and day-to-day performance.</Description>
             </RadioField>
             <RadioField>
-              <RadioComponent value="premium" color="green" />
+              <RadioComponent value="premium" color="brand" />
               <Label>Premium</Label>
               <Description>Use when finishing details and top-end materials materially improve the experience.</Description>
             </RadioField>
@@ -238,7 +240,7 @@ function SwitchExamples() {
             <SwitchField>
               <Label>Use regional pricing</Label>
               <Description>Adjust price comparisons and retailer availability to the visitor’s region.</Description>
-              <SwitchComponent checked={regionalPricing} onChange={setRegionalPricing} color="green" />
+              <SwitchComponent checked={regionalPricing} onChange={setRegionalPricing} color="brand" />
             </SwitchField>
           </SwitchGroup>
         </FieldsetComponent>
@@ -334,7 +336,7 @@ export const Checkbox: StoryObj<CheckboxPlaygroundArgs> = {
     checked: true,
     indeterminate: false,
     disabled: false,
-    color: 'green',
+    color: 'brand',
   },
   argTypes: {
     label: { control: 'text' },
@@ -379,7 +381,7 @@ export const Radio: StoryObj<RadioPlaygroundArgs> = {
   ...withStoryDescription('Radio groups are for mutually exclusive paths that benefit from brief explanatory copy.'),
   args: {
     selection: 'smart-value',
-    color: 'green',
+    color: 'brand',
   },
   argTypes: {
     selection: { control: 'inline-radio', options: ['budget', 'smart-value', 'premium'] },
@@ -433,7 +435,7 @@ export const Switch: StoryObj<SwitchPlaygroundArgs> = {
     description: 'Adjust price comparisons and retailer availability to the visitor’s region.',
     checked: true,
     disabled: false,
-    color: 'green',
+    color: 'brand',
   },
   argTypes: {
     label: { control: 'text' },

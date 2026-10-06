@@ -55,11 +55,11 @@ export function MobileSidebarSheet({
               aria-expanded={open}
               aria-haspopup="dialog"
               onClick={onOpen}
-              className="mx-auto flex w-full max-w-xl flex-col rounded-[1.5rem] border border-zinc-950/10 bg-white/90 px-4 py-3 text-left shadow-[0_24px_60px_-38px_rgba(23,23,23,0.48)] backdrop-blur-xl transition-[transform,box-shadow,background-color] duration-200 ease-out hover:-translate-y-0.5 hover:bg-white active:translate-y-0 dark:border-white/10 dark:bg-zinc-950/84 dark:hover:bg-zinc-950"
+              className="mx-auto flex w-full max-w-xl flex-col rounded-3xl border border-zinc-950/10 bg-white/90 px-4 py-3 text-left shadow-float backdrop-blur-xl transition-[transform,box-shadow,background-color] duration-200 ease-out hover:-translate-y-0.5 hover:bg-white active:translate-y-0 dark:border-white/10 dark:bg-zinc-950/84 dark:hover:bg-zinc-950"
             >
-              <span aria-hidden="true" className="mx-auto h-1.5 w-12 rounded-full bg-zinc-300 dark:bg-zinc-700" />
+              <span aria-hidden="true" className="mx-auto h-1.5 w-12 rounded-sm bg-zinc-300 dark:bg-zinc-700" />
               <div className="mt-3 flex items-center gap-3">
-                <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#eef2da] text-[#5a6a2e] dark:bg-[#334019]/75 dark:text-[#c4d38c]">
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-700 dark:bg-brand-900/75 dark:text-brand-300">
                   <OpenNavigationIcon />
                 </span>
                 <div className="min-w-0 flex-1">
@@ -84,10 +84,10 @@ export function MobileSidebarSheet({
           <Headless.DialogPanel
             id="mobile-sidebar-sheet"
             transition
-            className="mx-auto flex w-full max-w-xl flex-col overflow-hidden rounded-[1.85rem] border border-zinc-950/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(244,244,245,0.95))] shadow-[0_34px_90px_-48px_rgba(23,23,23,0.58)] transition duration-300 ease-out data-closed:translate-y-10 data-closed:opacity-0 dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(24,24,27,0.98),rgba(10,10,10,0.98))] dark:shadow-[0_34px_90px_-48px_rgba(0,0,0,0.78)]"
+            className="mx-auto flex w-full max-w-xl flex-col overflow-hidden rounded-3xl border border-zinc-950/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(244,244,245,0.95))] shadow-overlay transition duration-300 ease-out data-closed:translate-y-10 data-closed:opacity-0 dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(24,24,27,0.98),rgba(10,10,10,0.98))]"
           >
             <div className="border-b border-zinc-950/10 px-4 pb-3 pt-4 dark:border-white/10">
-              <span aria-hidden="true" className="mx-auto block h-1.5 w-12 rounded-full bg-zinc-300 dark:bg-zinc-700" />
+              <span aria-hidden="true" className="mx-auto block h-1.5 w-12 rounded-sm bg-zinc-300 dark:bg-zinc-700" />
               <div className="mt-4 flex items-start gap-3">
                 <div className="min-w-0 flex-1">
                   <Headless.DialogTitle className="text-sm font-medium text-zinc-950 dark:text-white">{title}</Headless.DialogTitle>
@@ -95,7 +95,7 @@ export function MobileSidebarSheet({
                 </div>
                 <Headless.CloseButton
                   aria-label="Close navigation"
-                  className="inline-flex shrink-0 items-center gap-2 rounded-full border border-zinc-950/10 bg-white/72 px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-white hover:text-zinc-950 dark:border-white/10 dark:bg-white/8 dark:text-zinc-200 dark:hover:bg-white/12 dark:hover:text-white"
+                  className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-zinc-950/10 bg-white/72 px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-white hover:text-zinc-950 dark:border-white/10 dark:bg-white/8 dark:text-zinc-200 dark:hover:bg-white/12 dark:hover:text-white"
                 >
                   <CloseNavigationIcon className="size-4" />
                   <span>Close</span>

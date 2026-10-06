@@ -78,7 +78,7 @@ function SectionHeaderPattern() {
     <GuideDemoFrame>
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
         <div className="space-y-3">
-          <Badge color="green">Pattern: section header</Badge>
+          <Badge color="brand">Pattern: section header</Badge>
           <Heading level={2} className="max-w-3xl text-4xl font-extralight tracking-tight text-zinc-950 dark:text-white">
             A short headline does the work. The surrounding rhythm makes it feel premium.
           </Heading>
@@ -87,7 +87,7 @@ function SectionHeaderPattern() {
           </Text>
         </div>
         <div className="flex flex-wrap gap-3">
-          <Button color="green">Explore the edit</Button>
+          <Button color="brand">Explore the edit</Button>
           <Button outline>
             Read the rationale
             <ArrowTrendIcon data-slot="icon" className="stroke-current" />
@@ -126,7 +126,7 @@ function CategoryGridPattern() {
 function NewsletterBandPattern() {
   return (
     <GuideDemoFrame>
-      <div className="rounded-3xl border border-zinc-950/10 bg-[linear-gradient(135deg,rgba(74,222,128,0.10),rgba(255,255,255,0.92))] p-6 dark:border-white/10 dark:bg-[linear-gradient(135deg,rgba(74,222,128,0.10),rgba(24,24,27,0.92))] lg:p-8">
+      <div className="rounded-3xl border border-zinc-950/10 bg-[linear-gradient(135deg,--alpha(var(--color-brand-400)_/_10%),rgba(255,255,255,0.92))] p-6 dark:border-white/10 dark:bg-[linear-gradient(135deg,--alpha(var(--color-brand-400)_/_10%),rgba(24,24,27,0.92))] lg:p-8">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
           <div className="space-y-3">
             <p className="text-xs font-light uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">Pattern: newsletter callout</p>
@@ -140,7 +140,7 @@ function NewsletterBandPattern() {
           <div className="space-y-3">
             <Input aria-label="Email address" type="email" placeholder="Email address" />
             <div className="flex flex-wrap gap-3">
-              <Button color="green">Join the newsletter</Button>
+              <Button color="brand">Join the newsletter</Button>
               <Button plain>Read the archive</Button>
             </div>
           </div>

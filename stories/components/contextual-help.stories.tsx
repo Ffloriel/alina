@@ -117,7 +117,7 @@ export const InUse: Story = {
             </div>
 
             <div className="flex flex-wrap gap-3">
-              <Button color="green">Save preferences</Button>
+              <Button color="brand">Save preferences</Button>
               <Button outline>Preview shortlist</Button>
             </div>
           </div>

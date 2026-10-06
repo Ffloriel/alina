@@ -4,16 +4,16 @@ type Tone = 'neutral' | 'accent' | 'positive' | 'notice'
 
 const toneClasses: Record<Tone, string> = {
   neutral: 'stroke-zinc-950 dark:stroke-white',
-  accent: 'stroke-[#8b9a48]',
-  positive: 'stroke-emerald-500',
-  notice: 'stroke-amber-500',
+  accent: 'stroke-brand-600',
+  positive: 'stroke-positive-500',
+  notice: 'stroke-notice-500',
 }
 
 const trackClasses: Record<Tone, string> = {
   neutral: 'stroke-zinc-950/10 dark:stroke-white/10',
-  accent: 'stroke-[#8b9a48]/20',
-  positive: 'stroke-emerald-500/20',
-  notice: 'stroke-amber-500/20',
+  accent: 'stroke-brand-600/20',
+  positive: 'stroke-positive-500/20',
+  notice: 'stroke-notice-500/20',
 }
 
 export function LoadingCircle({
@@ -66,7 +66,6 @@ export function LoadingCircle({
             className={toneClasses[tone]}
           />
         </svg>
-        <span className="sr-only">{label}</span>
       </div>
       <div className="space-y-1 text-center">
         <p className="text-sm font-medium text-zinc-950 dark:text-white">{label}</p>

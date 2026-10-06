@@ -13,7 +13,7 @@ export function GuidePage({
   mobileBleed?: boolean
 }) {
   return (
-    <div className="min-h-screen bg-[var(--background)] font-sans text-[var(--foreground)]">
+    <div className="min-h-screen bg-background font-sans text-foreground">
       <div
         className={clsx(
           'mx-auto flex w-full max-w-[88rem] flex-col gap-14 md:gap-20 lg:gap-24',
@@ -173,12 +173,12 @@ export function GuideDoDont({ title, doText, dontText }: { title: string; doText
       <div className="space-y-6">
         <h3 className="text-xl font-medium text-zinc-950 dark:text-white">{title}</h3>
         <div className="grid gap-6 lg:gap-8 md:grid-cols-2">
-          <div className="border-l-2 border-emerald-500/35 pl-4">
-            <p className="text-xs font-light uppercase tracking-[0.16em] text-emerald-700 dark:text-emerald-300">Do</p>
+          <div className="border-l-2 border-positive-500/35 pl-4">
+            <p className="text-xs font-light uppercase tracking-[0.16em] text-positive-700 dark:text-positive-300">Do</p>
             <p className="mt-2 text-sm/6 text-zinc-700 dark:text-zinc-200">{doText}</p>
           </div>
-          <div className="border-l-2 border-red-500/35 pl-4">
-            <p className="text-xs font-light uppercase tracking-[0.16em] text-red-700 dark:text-red-300">Do not</p>
+          <div className="border-l-2 border-negative-500/35 pl-4">
+            <p className="text-xs font-light uppercase tracking-[0.16em] text-negative-700 dark:text-negative-300">Do not</p>
             <p className="mt-2 text-sm/6 text-zinc-700 dark:text-zinc-200">{dontText}</p>
           </div>
         </div>
@@ -215,7 +215,7 @@ export function GuideCodeBlock({ code, language = 'txt' }: { code: string; langu
   return (
     <div className="overflow-hidden rounded-xl border border-zinc-950/10 bg-zinc-950 dark:border-white/10">
       <div className="border-b border-white/10 px-4 py-3 text-xs font-light uppercase tracking-[0.16em] text-zinc-400">{language}</div>
-      <pre className="overflow-x-auto p-4 font-mono text-sm/6 text-zinc-100">
+      <pre tabIndex={0} className="overflow-x-auto p-4 font-mono text-sm/6 text-zinc-100">
         <code>{code}</code>
       </pre>
     </div>
@@ -224,7 +224,7 @@ export function GuideCodeBlock({ code, language = 'txt' }: { code: string; langu
 
 const toneClasses: Record<Tone, string> = {
   neutral: 'border-zinc-950/10 dark:border-white/10',
-  accent: 'border-emerald-500/35',
-  positive: 'border-emerald-500/35',
-  notice: 'border-amber-500/35',
+  accent: 'border-brand-500/60',
+  positive: 'border-positive-500/35',
+  notice: 'border-notice-500/35',
 }

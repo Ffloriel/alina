@@ -40,17 +40,17 @@ function RadioExamples() {
               <p className="mt-1 text-base/6 text-zinc-500 sm:text-sm/6 dark:text-zinc-400">All options should remain visible together.</p>
               <RadioGroup className="mt-8" value={tier} onChange={(value) => setTier(value as Tier)}>
                 <RadioField>
-                  <Radio value="budget" color="green" />
+                  <Radio value="budget" color="brand" />
                   <Label>Budget</Label>
                   <Description>Prioritize dependable value over premium finishes.</Description>
                 </RadioField>
                 <RadioField>
-                  <Radio value="smart-value" color="green" />
+                  <Radio value="smart-value" color="brand" />
                   <Label>Smart value</Label>
                   <Description>Balance cost, longevity, and day-to-day performance.</Description>
                 </RadioField>
                 <RadioField>
-                  <Radio value="premium" color="green" />
+                  <Radio value="premium" color="brand" />
                   <Label>Premium</Label>
                   <Description>Use when the top-end finish materially improves the experience.</Description>
                 </RadioField>
@@ -85,7 +85,7 @@ export const Overview: Story = {
   ...withStoryDescription('Radio groups are for mutually exclusive choices that benefit from visible comparison and short explanatory copy.'),
   args: {
     value: 'budget',
-    color: 'green',
+    color: 'brand',
   },
   render: () => <RadioExamples />,
 }

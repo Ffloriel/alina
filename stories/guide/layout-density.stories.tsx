@@ -84,7 +84,7 @@ export const Overview: Story = {
         <GuideDemoFrame>
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_20rem] lg:items-end">
             <div className="space-y-5">
-              <Badge color="green">Two-column default</Badge>
+              <Badge color="brand">Two-column default</Badge>
               <div className="space-y-4">
                 <Heading level={2} className="max-w-3xl text-4xl font-extralight tracking-tight text-zinc-950 dark:text-white">
                   One dominant message. One supporting area. Less visual negotiation.
@@ -104,7 +104,7 @@ export const Overview: Story = {
                 </div>
               </div>
               <div className="flex flex-wrap gap-3">
-                <Button color="green">
+                <Button color="brand">
                   Keep the page focused
                   <ArrowTrendIcon data-slot="icon" className="stroke-current" />
                 </Button>

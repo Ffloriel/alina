@@ -4,10 +4,10 @@ import type { ReactNode } from 'react'
 type Tone = 'informative' | 'positive' | 'notice' | 'negative'
 
 const toneClasses: Record<Tone, string> = {
-  informative: 'border-sky-200/80 bg-sky-50/90 text-sky-950 dark:border-sky-900/50 dark:bg-sky-950/35 dark:text-sky-100',
-  positive: 'border-emerald-200/80 bg-emerald-50/90 text-emerald-950 dark:border-emerald-900/50 dark:bg-emerald-950/35 dark:text-emerald-100',
-  notice: 'border-amber-200/80 bg-amber-50/90 text-amber-950 dark:border-amber-900/50 dark:bg-amber-950/35 dark:text-amber-100',
-  negative: 'border-rose-200/80 bg-rose-50/90 text-rose-950 dark:border-rose-900/50 dark:bg-rose-950/35 dark:text-rose-100',
+  informative: 'border-informative-200/80 bg-informative-50/90 text-informative-950 dark:border-informative-900/50 dark:bg-informative-950/35 dark:text-informative-100',
+  positive: 'border-positive-200/80 bg-positive-50/90 text-positive-950 dark:border-positive-900/50 dark:bg-positive-950/35 dark:text-positive-100',
+  notice: 'border-notice-200/80 bg-notice-50/90 text-notice-950 dark:border-notice-900/50 dark:bg-notice-950/35 dark:text-notice-100',
+  negative: 'border-negative-200/80 bg-negative-50/90 text-negative-950 dark:border-negative-900/50 dark:bg-negative-950/35 dark:text-negative-100',
 }
 
 export function AlertBanner({

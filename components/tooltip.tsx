@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import type { ReactNode } from 'react'
+import { cloneElement, isValidElement, useId, type ReactNode } from 'react'
 
 type Side = 'top' | 'right' | 'bottom' | 'left'
 
@@ -25,13 +25,19 @@ export function Tooltip({
   panelClassName?: string
   children: ReactNode
 }) {
+  const id = useId()
+
   return (
     <span className={clsx(className, 'group/tooltip relative inline-flex')}>
-      {children}
+      {/* Point the trigger at the panel so assistive tech announces the content */}
+      {isValidElement<{ 'aria-describedby'?: string }>(children)
+        ? cloneElement(children, { 'aria-describedby': clsx(children.props['aria-describedby'], id) })
+        : children}
       <span
+        id={id}
         role="tooltip"
         className={clsx(
-          'pointer-events-none absolute z-20 w-max max-w-60 rounded-lg border border-zinc-950/10 bg-zinc-950 px-3 py-2 text-xs/5 text-white shadow-[0_18px_40px_-28px_rgba(23,23,23,0.65)] transition duration-150 dark:border-white/10',
+          'pointer-events-none absolute z-20 w-max max-w-60 rounded-lg border border-zinc-950/10 bg-zinc-950 px-3 py-2 text-xs/5 text-white shadow-float transition duration-150 dark:border-white/10',
           sideClasses[side],
           open
             ? 'opacity-100'

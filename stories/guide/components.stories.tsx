@@ -30,7 +30,7 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-const buttonAndLinkSnippet = `<a class="inline-flex items-center justify-center gap-2 rounded-lg border border-[#9cab56] bg-[#b9c86f] px-6 py-3 text-sm font-medium text-[#334019] transition-colors hover:bg-[#c7d686]">
+const buttonAndLinkSnippet = `<a class="inline-flex items-center justify-center gap-2 rounded-lg border border-brand-500 bg-brand-400 px-6 py-3 text-sm font-medium text-brand-900 transition-colors hover:bg-brand-300">
   Explore categories
 </a>
 
@@ -42,7 +42,7 @@ const buttonAndLinkSnippet = `<a class="inline-flex items-center justify-center 
   Explore
 </a>
 
-<a class="text-xs font-light tracking-[0.15em] uppercase text-neutral-600 underline-offset-4 transition-[color,text-decoration-color] duration-300 hover:text-black hover:underline dark:text-neutral-400 dark:hover:text-white">
+<a class="text-xs font-light tracking-[0.15em] uppercase text-zinc-600 underline-offset-4 transition-[color,text-decoration-color] duration-300 hover:text-black hover:underline dark:text-zinc-400 dark:hover:text-white">
   Category name
 </a>`
 
@@ -138,7 +138,7 @@ export const Components: Story = {
         <GuideDemoFrame>
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-end">
             <div className="space-y-4">
-              <Badge color="green">Recommendation</Badge>
+              <Badge color="brand">Recommendation</Badge>
               <Heading level={2} className="text-4xl font-extralight tracking-tight text-zinc-950 dark:text-white">
                 Components are not isolated artwork.
               </Heading>
@@ -147,7 +147,7 @@ export const Components: Story = {
                 hierarchy, accessibility, and tone intact.
               </Text>
               <div className="flex flex-wrap gap-3">
-                <Button color="green">Primary action</Button>
+                <Button color="brand">Primary action</Button>
                 <Button outline>Secondary action</Button>
               </div>
             </div>

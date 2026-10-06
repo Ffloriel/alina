@@ -52,13 +52,14 @@ export function DropZone({
   return (
     <div {...props} className={clsx(className, 'space-y-4')}>
       <div
+        role="group"
         aria-disabled={disabled || undefined}
         aria-labelledby={`${inputId}-title`}
         className={clsx(
           'rounded-2xl border border-dashed p-6 transition-colors duration-300 motion-reduce:transition-none lg:p-8',
           disabled && 'cursor-not-allowed border-zinc-950/10 bg-zinc-950/3 opacity-60 dark:border-white/10 dark:bg-white/3',
           !disabled && !isDragging && 'border-zinc-950/15 bg-white/72 dark:border-white/12 dark:bg-zinc-950/62',
-          !disabled && isDragging && 'border-[#8b9a48]/70 bg-[#eef2da]/70 dark:border-[#b9c86f]/70 dark:bg-[#334019]/30'
+          !disabled && isDragging && 'border-brand-600/70 bg-brand-100/70 dark:border-brand-400/70 dark:bg-brand-900/30'
         )}
         onDragEnter={(event) => {
           if (disabled) {
@@ -126,6 +127,8 @@ export function DropZone({
           id={inputId}
           type="file"
           className="sr-only"
+          aria-labelledby={`${inputId}-title`}
+          tabIndex={-1}
           accept={accept}
           multiple={multiple}
           disabled={disabled}

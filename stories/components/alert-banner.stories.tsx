@@ -62,7 +62,7 @@ export const Overview: Story = {
             <AlertBanner
               tone="notice"
               title="Shipping estimates are temporarily longer this week."
-              actions={<Button color="green">See current lead times</Button>}
+              actions={<Button color="brand">See current lead times</Button>}
             >
               Call attention to the change without interrupting the rest of the browsing flow.
             </AlertBanner>
@@ -85,7 +85,7 @@ export const InUse: Story = {
         <AlertBanner
           tone="positive"
           title="Spring shortlist updated successfully."
-          actions={<Button color="green">Compare the new picks</Button>}
+          actions={<Button color="brand">Compare the new picks</Button>}
         >
           Two cookware recommendations changed after this week’s availability and price review.
         </AlertBanner>

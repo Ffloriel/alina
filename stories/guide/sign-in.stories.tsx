@@ -31,10 +31,10 @@ const trustRows = [
 export const Overview: Story = {
   render: () => (
     <GuidePage>
-      <section className="overflow-hidden rounded-3xl border border-zinc-950/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(243,244,236,0.94))] shadow-[0_30px_80px_-50px_rgba(23,23,23,0.28)] dark:border-white/10 dark:bg-[linear-gradient(135deg,rgba(10,10,10,0.98),rgba(28,32,20,0.96))]">
+      <section className="overflow-hidden rounded-3xl border border-zinc-950/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(243,244,236,0.94))] shadow-panel dark:border-white/10 dark:bg-[linear-gradient(135deg,rgba(10,10,10,0.98),rgba(28,32,20,0.96))]">
         <div className="grid gap-8 xl:grid-cols-[minmax(0,1.05fr)_32rem]">
           <div className="order-2 relative overflow-hidden px-6 py-8 sm:px-8 lg:px-12 lg:py-12 xl:order-1">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(185,200,111,0.28),transparent_36%),radial-gradient(circle_at_bottom_right,rgba(90,106,46,0.14),transparent_32%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(185,200,111,0.18),transparent_36%),radial-gradient(circle_at_bottom_right,rgba(185,200,111,0.10),transparent_30%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,--alpha(var(--color-brand-400)_/_28%),transparent_36%),radial-gradient(circle_at_bottom_right,--alpha(var(--color-brand-700)_/_14%),transparent_32%)] dark:bg-[radial-gradient(circle_at_top_left,--alpha(var(--color-brand-400)_/_18%),transparent_36%),radial-gradient(circle_at_bottom_right,--alpha(var(--color-brand-400)_/_10%),transparent_30%)]" />
             <div className="relative space-y-10">
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
@@ -44,7 +44,7 @@ export const Overview: Story = {
                     <p className="text-sm text-zinc-600 dark:text-zinc-300">Designed sign-in example</p>
                   </div>
                 </div>
-                <Badge color="green">Sign in page</Badge>
+                <Badge color="brand">Sign in page</Badge>
                 <div className="space-y-4">
                   <h1 className="max-w-2xl text-5xl font-extralight tracking-tight text-zinc-950 sm:text-6xl dark:text-white">
                     Return to a calmer workspace.
@@ -66,7 +66,7 @@ export const Overview: Story = {
 
               <div className="rounded-3xl bg-zinc-950/95 p-6 text-white dark:bg-black/70">
                 <p className="text-xs font-light uppercase tracking-[0.16em] text-zinc-400">Why it works</p>
-                <p className="mt-3 max-w-lg [font-family:var(--font-display)] text-3xl tracking-tight text-white">
+                <p className="mt-3 max-w-lg font-display text-3xl tracking-tight text-white">
                   One brand surface. One form surface. Enough warmth to feel intentional.
                 </p>
                 <p className="mt-4 max-w-lg text-sm/6 text-zinc-300">
@@ -77,7 +77,7 @@ export const Overview: Story = {
           </div>
 
           <div className="order-1 p-3 lg:p-5 xl:order-2">
-            <div className="h-full rounded-3xl border border-white/70 bg-white/88 p-6 shadow-[0_24px_60px_-42px_rgba(23,23,23,0.35)] backdrop-blur-xl xl:p-8 dark:border-white/10 dark:bg-zinc-950/86 dark:shadow-[0_24px_60px_-42px_rgba(0,0,0,0.7)]">
+            <div className="h-full rounded-3xl border border-white/70 bg-white/88 p-6 shadow-panel backdrop-blur-xl xl:p-8 dark:border-white/10 dark:bg-zinc-950/86">
               <div className="mb-6 flex items-center gap-3 xl:hidden">
                 <FullHumanLogo className="h-8 w-auto text-zinc-950 dark:text-white" />
                 <div>
@@ -106,7 +106,7 @@ export const Overview: Story = {
               </div>
 
               <div className="mt-6 space-y-3">
-                <Button color="green" className="w-full justify-center">
+                <Button color="brand" className="w-full justify-center">
                   Continue
                 </Button>
                 <Button outline className="w-full justify-center">

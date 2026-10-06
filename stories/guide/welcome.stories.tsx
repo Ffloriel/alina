@@ -31,13 +31,13 @@ export const Overview: Story = {
         }
         actions={
           <>
-            <Button color="green">Start with the guide</Button>
+            <Button color="brand">Start with the guide</Button>
             <Button outline>Browse the components</Button>
           </>
         }
         aside={
           <div className="space-y-4">
-            <Badge color="green">Version 1.0.0</Badge>
+            <Badge color="brand">Version 1.0.0</Badge>
             <p className="text-sm/6 text-zinc-600 dark:text-zinc-300">
               Built on Next.js 16, React 19, Tailwind CSS 4, and the latest Storybook 10 framework package for Next.js.
             </p>

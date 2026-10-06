@@ -396,10 +396,10 @@ function ResultCard({
   hint?: string
 }) {
   return (
-    <div className="rounded-2xl border border-zinc-950/10 bg-[linear-gradient(180deg,rgba(238,242,218,0.82),rgba(255,255,255,0.96))] p-5 shadow-[0_20px_45px_-34px_rgba(90,106,46,0.45)] dark:border-[#9cab56] dark:bg-[linear-gradient(180deg,rgba(185,200,111,0.18),rgba(24,24,27,0.98))]">
-      <p className="text-xs font-light uppercase tracking-[0.16em] text-[#5a6a2e] dark:text-[#c4d38c]">{label}</p>
-      <p className="mt-3 text-3xl font-extralight tracking-tight text-[#334019] dark:text-white">{value}</p>
-      {hint ? <p className="mt-3 text-sm/6 text-[#4f5f24] dark:text-zinc-300">{hint}</p> : null}
+    <div className="rounded-2xl border border-zinc-950/10 bg-[linear-gradient(180deg,--alpha(var(--color-brand-100)_/_82%),rgba(255,255,255,0.96))] p-5 shadow-selected dark:border-brand-500 dark:bg-[linear-gradient(180deg,--alpha(var(--color-brand-400)_/_18%),rgba(24,24,27,0.98))]">
+      <p className="text-xs font-light uppercase tracking-[0.16em] text-brand-700 dark:text-brand-300">{label}</p>
+      <p className="mt-3 text-3xl font-extralight tracking-tight text-brand-900 dark:text-white">{value}</p>
+      {hint ? <p className="mt-3 text-sm/6 text-brand-800 dark:text-zinc-300">{hint}</p> : null}
     </div>
   )
 }
@@ -584,7 +584,7 @@ function UnitConverterExamplePage() {
             ))}
           </SelectionCardGroup>
 
-          <div className="rounded-3xl border border-zinc-950/10 bg-white/80 p-5 shadow-[0_30px_80px_-52px_rgba(23,23,23,0.2)] dark:border-white/10 dark:bg-zinc-950/72 dark:shadow-[0_30px_80px_-52px_rgba(0,0,0,0.62)] lg:p-8">
+          <div className="rounded-3xl border border-zinc-950/10 bg-white/80 p-5 shadow-panel dark:border-white/10 dark:bg-zinc-950/72 lg:p-8">
             {activeCategory === 'units' ? (
               <div className="space-y-6">
               <div className="space-y-3">

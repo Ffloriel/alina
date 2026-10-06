@@ -107,12 +107,12 @@ export const SidebarItem = forwardRef(function SidebarItem(
     // Active
     'data-active:bg-zinc-950/6 data-active:*:data-[slot=icon]:fill-zinc-950',
     // Current
-    'data-current:text-[#334019] data-current:*:data-[slot=icon]:fill-[#5a6a2e]',
+    'data-current:text-brand-900 data-current:*:data-[slot=icon]:fill-brand-700',
     // Dark mode
     'dark:text-white dark:*:data-[slot=icon]:fill-zinc-400',
     'dark:data-hover:bg-white/5 dark:data-hover:*:data-[slot=icon]:fill-white',
     'dark:data-active:bg-white/5 dark:data-active:*:data-[slot=icon]:fill-white',
-    'dark:data-current:text-[#e7eccd] dark:data-current:*:data-[slot=icon]:fill-[#c4d38c]'
+    'dark:data-current:text-brand-100 dark:data-current:*:data-[slot=icon]:fill-brand-300'
   )
 
   return (
@@ -120,7 +120,7 @@ export const SidebarItem = forwardRef(function SidebarItem(
       {current && (
         <motion.span
           layoutId="current-indicator"
-          className="absolute inset-0 rounded-lg bg-[#eef2da] shadow-[0_14px_34px_-24px_rgba(90,106,46,0.8)] ring-1 ring-[#d2dba8] sm:rounded-xl dark:bg-[#334019]/70 dark:ring-[#5a6a2e]/60"
+          className="absolute inset-0 rounded-lg bg-brand-100 shadow-selected ring-1 ring-brand-300 sm:rounded-xl dark:bg-brand-900/70 dark:ring-brand-700/60"
         />
       )}
       {typeof props.href === 'string' ? (

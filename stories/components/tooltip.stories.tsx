@@ -39,9 +39,9 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-function HelpTrigger({ label = '?' }: { label?: string }) {
+function HelpTrigger({ label = '?', ...props }: { label?: string } & React.ComponentPropsWithoutRef<'button'>) {
   return (
-    <button className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-zinc-950/10 bg-white text-sm font-medium text-zinc-950 dark:border-white/10 dark:bg-zinc-900 dark:text-white">
+    <button {...props} className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-zinc-950/10 bg-white text-sm font-medium text-zinc-950 dark:border-white/10 dark:bg-zinc-900 dark:text-white">
       {label}
     </button>
   )

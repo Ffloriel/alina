@@ -91,9 +91,9 @@ export const Overview: Story = {
             </div>
             <div className="space-y-4">
               <p className="text-xs font-light uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">Instrument Serif</p>
-              <p className="[font-family:var(--font-display)] text-2xl tracking-tight text-zinc-950 dark:text-white">Use sparingly for editorial contrast.</p>
-              <p className="[font-family:var(--font-display)] text-4xl tracking-tight text-zinc-950 dark:text-white">One elegant phrase can carry a whole hero.</p>
-              <p className="[font-family:var(--font-display)] text-6xl leading-none tracking-tight text-zinc-950 dark:text-white">Quiet, deliberate, human.</p>
+              <p className="font-display text-2xl tracking-tight text-zinc-950 dark:text-white">Use sparingly for editorial contrast.</p>
+              <p className="font-display text-4xl tracking-tight text-zinc-950 dark:text-white">One elegant phrase can carry a whole hero.</p>
+              <p className="font-display text-6xl leading-none tracking-tight text-zinc-950 dark:text-white">Quiet, deliberate, human.</p>
             </div>
             <div className="space-y-4 md:col-span-2">
               <p className="text-xs font-light uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">Geist Mono</p>
@@ -115,7 +115,7 @@ export const Overview: Story = {
             <div key={sample.language} className="space-y-4 border-t border-zinc-950/10 pt-5 dark:border-white/10">
               <p className="text-xs font-light uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">{sample.language}</p>
               <p className="font-sans text-2xl font-extralight tracking-tight text-zinc-950 dark:text-white">{sample.sans}</p>
-              <p className="[font-family:var(--font-display)] text-4xl tracking-tight text-zinc-950 dark:text-white">{sample.display}</p>
+              <p className="font-display text-4xl tracking-tight text-zinc-950 dark:text-white">{sample.display}</p>
               <p className="font-mono text-sm text-zinc-600 dark:text-zinc-300">{sample.mono}</p>
             </div>
           ))}

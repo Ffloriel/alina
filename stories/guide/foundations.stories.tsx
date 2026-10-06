@@ -62,7 +62,9 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-const typographyComponentSnippet = `<h2 class="text-xs font-light tracking-[0.2em] uppercase text-neutral-400">
+const brandSwatches: string[] = ['brand-100', 'brand-400', 'brand-500', 'brand-900']
+
+const typographyComponentSnippet = `<h2 class="text-xs font-light tracking-[0.2em] uppercase text-zinc-400">
   Section title
 </h2>
 
@@ -74,11 +76,11 @@ const typographyComponentSnippet = `<h2 class="text-xs font-light tracking-[0.2e
   Hero heading
 </h1>
 
-<p class="text-base font-light leading-relaxed text-neutral-600 dark:text-neutral-400">
+<p class="text-base font-light leading-relaxed text-zinc-600 dark:text-zinc-400">
   Body paragraph text goes here.
 </p>
 
-<span class="text-xs font-light tracking-[0.15em] uppercase text-neutral-400">
+<span class="text-xs font-light tracking-[0.15em] uppercase text-zinc-400">
   Label text
 </span>
 
@@ -96,20 +98,20 @@ export const Foundations: Story = {
       <GuideSection
         eyebrow="Color"
         title="Neutrals do the structural work. Accent and semantic colors carry meaning."
-        summary="Most of the interface should remain neutral. Accent green is reserved for hierarchy and brand emphasis, while semantic colors communicate product state."
+        summary="Most of the interface should remain neutral. The olive brand accent is reserved for hierarchy and brand emphasis, while semantic colors communicate product state."
       >
         <GuideCardGrid columns={4}>
-          {accentScale.slice(0, 4).map(([token, tailwindClass, hex, usage]) => (
-            <GuideCard key={token} title={token} eyebrow={tailwindClass} tone="accent">
-              <div className="h-20 rounded-2xl border border-black/5" style={{ backgroundColor: hex }} />
+          {accentScale.filter(([token]) => brandSwatches.includes(token)).map(([token, cssVariable, hex, usage]) => (
+            <GuideCard key={token} title={token} eyebrow={cssVariable} tone="accent">
+              <div className="h-20 rounded-2xl border border-black/5" style={{ backgroundColor: `var(${cssVariable})` }} />
               <p className="font-mono text-xs text-zinc-500 dark:text-zinc-400">{hex}</p>
               <p>{usage}</p>
             </GuideCard>
           ))}
         </GuideCardGrid>
-        <GuideTable columns={['Accent token', 'Tailwind', 'Hex', 'Usage']} rows={accentScale} />
-        <GuideTable columns={['Neutral token', 'Tailwind', 'Hex', 'Usage']} rows={neutralScale} />
-        <GuideTable columns={['Semantic', 'Tailwind', 'Hex', 'Usage']} rows={semanticColors} />
+        <GuideTable columns={['Brand token', 'CSS variable', 'Hex', 'Usage']} rows={accentScale} />
+        <GuideTable columns={['Neutral token', 'CSS variable', 'Hex', 'Usage']} rows={neutralScale} />
+        <GuideTable columns={['Semantic', 'Token', 'Hex', 'Usage']} rows={semanticColors} />
         <GuideTable columns={['State', 'Light mode', 'Dark mode']} rows={colorStateExamples} />
         <GuideTable columns={['Tier', 'Light mode', 'Dark mode']} rows={tierColors} />
         <GuideTable columns={['Element', 'Light mode', 'Dark mode']} rows={darkModeSurfaceMap} />
@@ -126,8 +128,8 @@ export const Foundations: Story = {
           ))}
         </GuideCardGrid>
         <GuideCallout title="Color rule" tone="notice">
-          Keep brand and semantic colors distinct. Success is emerald, not the hero accent. Structural borders and body
-          copy should stay neutral.
+          Keep brand and semantic colors distinct. Success uses the positive tone, not the brand accent. Structural
+          borders and body copy should stay neutral.
         </GuideCallout>
         <GuideCodeBlock language="css" code={selectionCssSnippet} />
       </GuideSection>
@@ -141,7 +143,7 @@ export const Foundations: Story = {
           <GuideDemoFrame>
             <div className="space-y-6">
               <p className="text-xs font-light uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">Type preview</p>
-              <p className="[font-family:var(--font-display)] text-5xl leading-none tracking-tight text-zinc-950 dark:text-white">
+              <p className="font-display text-5xl leading-none tracking-tight text-zinc-950 dark:text-white">
                 Curated essentials for modern living.
               </p>
               <p className="max-w-2xl text-base font-light leading-relaxed text-zinc-600 dark:text-zinc-300">
@@ -149,7 +151,7 @@ export const Foundations: Story = {
                 tracking to build rhythm without relying on heavier weights.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Button color="green">Explore categories</Button>
+                <Button color="brand">Explore categories</Button>
                 <Badge color="zinc">tracking-[0.15em]</Badge>
               </div>
             </div>

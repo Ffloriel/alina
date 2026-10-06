@@ -4,17 +4,17 @@ import type { ReactNode } from 'react'
 type Tone = 'informative' | 'positive' | 'notice' | 'negative'
 
 const toneClasses: Record<Tone, string> = {
-  informative: 'border-sky-200/80 bg-white/95 text-zinc-950 dark:border-sky-900/50 dark:bg-zinc-950/92 dark:text-white',
-  positive: 'border-emerald-200/80 bg-white/95 text-zinc-950 dark:border-emerald-900/50 dark:bg-zinc-950/92 dark:text-white',
-  notice: 'border-amber-200/80 bg-white/95 text-zinc-950 dark:border-amber-900/50 dark:bg-zinc-950/92 dark:text-white',
-  negative: 'border-rose-200/80 bg-white/95 text-zinc-950 dark:border-rose-900/50 dark:bg-zinc-950/92 dark:text-white',
+  informative: 'border-informative-200/80 bg-white/95 text-zinc-950 dark:border-informative-900/50 dark:bg-zinc-950/92 dark:text-white',
+  positive: 'border-positive-200/80 bg-white/95 text-zinc-950 dark:border-positive-900/50 dark:bg-zinc-950/92 dark:text-white',
+  notice: 'border-notice-200/80 bg-white/95 text-zinc-950 dark:border-notice-900/50 dark:bg-zinc-950/92 dark:text-white',
+  negative: 'border-negative-200/80 bg-white/95 text-zinc-950 dark:border-negative-900/50 dark:bg-zinc-950/92 dark:text-white',
 }
 
 const accentClasses: Record<Tone, string> = {
-  informative: 'bg-sky-500',
-  positive: 'bg-emerald-500',
-  notice: 'bg-amber-500',
-  negative: 'bg-rose-500',
+  informative: 'bg-informative-500',
+  positive: 'bg-positive-500',
+  notice: 'bg-notice-500',
+  negative: 'bg-negative-500',
 }
 
 function CloseIcon() {
@@ -49,7 +49,7 @@ export function Toast({
       {...props}
       className={clsx(
         className,
-        'w-full max-w-sm rounded-xl border p-4 shadow-[0_20px_45px_-32px_rgba(23,23,23,0.45)] backdrop-blur-xl',
+        'w-full max-w-sm rounded-xl border p-4 shadow-float backdrop-blur-xl',
         toneClasses[tone]
       )}
     >

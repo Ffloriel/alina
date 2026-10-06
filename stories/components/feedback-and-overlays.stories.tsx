@@ -70,7 +70,7 @@ function AlertExamples() {
           <p className="text-sm/6 text-zinc-600 dark:text-zinc-300">
             Alerts are for interruption or confirmation, not for long-form explanation.
           </p>
-          <ButtonComponent color="green" onClick={() => setShowAlert(true)}>
+          <ButtonComponent color="brand" onClick={() => setShowAlert(true)}>
             Open alert
           </ButtonComponent>
         </div>
@@ -133,7 +133,7 @@ function DialogExamples() {
           <ButtonComponent plain onClick={() => setShowDialog(false)}>
             Close
           </ButtonComponent>
-          <ButtonComponent color="green" onClick={() => setShowDialog(false)}>
+          <ButtonComponent color="brand" onClick={() => setShowDialog(false)}>
             Continue review
           </ButtonComponent>
         </DialogActions>
@@ -251,7 +251,7 @@ export const Dialog: StoryObj<DialogPlaygroundArgs> = {
           </DialogBody>
           <DialogActions>
             <ButtonComponent plain>{cancelLabel}</ButtonComponent>
-            <ButtonComponent color="green">{confirmLabel}</ButtonComponent>
+            <ButtonComponent color="brand">{confirmLabel}</ButtonComponent>
           </DialogActions>
         </DialogComponent>
       </GuideSection>

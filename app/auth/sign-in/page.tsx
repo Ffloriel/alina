@@ -61,7 +61,7 @@ export default async function SignInPage({ searchParams }: { searchParams: Searc
           <Input aria-label="Password" name="password" type="password" placeholder="Enter your password" />
         </label>
         <div className="pt-2">
-          <Button color="green" type="submit" className="w-full justify-center">
+          <Button color="brand" type="submit" className="w-full justify-center">
             Sign in
           </Button>
         </div>

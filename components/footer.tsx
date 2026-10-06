@@ -70,7 +70,7 @@ export function Footer({
       )}
     >
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-[repeat(3,minmax(0,1fr))_minmax(16rem,1.2fr)] lg:gap-12 xl:gap-16">
-        <nav className="lg:col-span-3">
+        <nav aria-label="Footer" className="lg:col-span-3">
           <ul className="grid grid-cols-2 gap-8 text-sm lg:grid-cols-3 lg:gap-10">
             {columns.map((column) => (
               <li key={column.heading}>
@@ -103,8 +103,8 @@ export function Footer({
             <h2 className="text-sm font-medium uppercase tracking-[0.1em] text-zinc-900 dark:text-zinc-100">{newsletterTitle}</h2>
             <p className="mt-4 text-sm font-light text-zinc-700 dark:text-zinc-300">{newsletterDescription}</p>
             <Button
-              className="mt-6 !text-zinc-950 dark:!text-zinc-950"
-              color="green"
+              className="mt-6"
+              color="brand"
               href={subscribeHref}
               target={subscribeIsExternal ? '_blank' : undefined}
               rel={subscribeIsExternal ? 'noreferrer' : undefined}

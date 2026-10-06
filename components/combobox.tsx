@@ -13,6 +13,7 @@ export function Combobox<T>({
   placeholder,
   autoFocus,
   'aria-label': ariaLabel,
+  toggleLabel = 'Show options',
   children,
   ...props
 }: {
@@ -23,6 +24,7 @@ export function Combobox<T>({
   placeholder?: string
   autoFocus?: boolean
   'aria-label'?: string
+  toggleLabel?: string
   children: (value: NonNullable<T>) => React.ReactElement
 } & Omit<Headless.ComboboxProps<T, false>, 'as' | 'multiple' | 'children'> & { anchor?: 'top' | 'bottom' }) {
   const [query, setQuery] = useState('')
@@ -47,11 +49,11 @@ export function Combobox<T>({
           // Background color is moved to control and shadow is removed in dark mode so hide `before` pseudo
           'dark:before:hidden',
           // Focus ring
-          'after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:ring-transparent after:ring-inset sm:focus-within:after:ring-2 sm:focus-within:after:ring-blue-500',
+          'after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:ring-transparent after:ring-inset focus-within:after:ring-2 focus-within:after:ring-focus',
           // Disabled state
           'has-data-disabled:opacity-50 has-data-disabled:before:bg-zinc-950/5 has-data-disabled:before:shadow-none',
           // Invalid state
-          'has-data-invalid:before:shadow-red-500/10',
+          'has-data-invalid:before:shadow-negative-500/10',
         ])}
       >
         <Headless.ComboboxInput
@@ -76,14 +78,14 @@ export function Combobox<T>({
             // Hide default focus styles
             'focus:outline-hidden',
             // Invalid state
-            'data-invalid:border-red-500 data-invalid:data-hover:border-red-500 dark:data-invalid:border-red-500 dark:data-invalid:data-hover:border-red-500',
+            'data-invalid:border-negative-500 data-invalid:data-hover:border-negative-500 dark:data-invalid:border-negative-500 dark:data-invalid:data-hover:border-negative-500',
             // Disabled state
             'data-disabled:border-zinc-950/20 dark:data-disabled:border-white/15 dark:data-disabled:bg-white/2.5 dark:data-hover:data-disabled:border-white/15',
             // System icons
             'dark:scheme-dark',
           ])}
         />
-        <Headless.ComboboxButton className="group absolute inset-y-0 right-0 flex items-center px-2">
+        <Headless.ComboboxButton aria-label={toggleLabel} className="group absolute inset-y-0 right-0 flex items-center px-2">
           <svg
             className="size-5 stroke-zinc-500 group-data-disabled:stroke-zinc-600 group-data-hover:stroke-zinc-700 sm:size-4 dark:stroke-zinc-400 dark:group-data-hover:stroke-zinc-300 forced-colors:stroke-[CanvasText]"
             viewBox="0 0 16 16"
@@ -149,7 +151,7 @@ export function ComboboxOption<T>({
         // Typography
         'text-base/6 text-zinc-950 sm:text-sm/6 dark:text-white forced-colors:text-[CanvasText]',
         // Focus
-        'outline-hidden data-focus:bg-blue-500 data-focus:text-white',
+        'outline-hidden data-focus:bg-blue-600 data-focus:text-white',
         // Forced colors mode
         'forced-color-adjust-none forced-colors:data-focus:bg-[Highlight] forced-colors:data-focus:text-[HighlightText]',
         // Disabled

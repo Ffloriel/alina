@@ -123,7 +123,7 @@ function ToastWorkspaceDemo() {
                 <p className="text-xs font-light uppercase tracking-[0.16em] text-zinc-500">Actions that trigger notifications</p>
                 <div className="flex flex-wrap gap-3">
                   <Button
-                    color="green"
+                    color="brand"
                     onClick={() =>
                       showToast({
                         tone: 'positive',

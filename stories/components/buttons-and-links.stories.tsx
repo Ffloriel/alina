@@ -3,7 +3,7 @@ import { Badge as BadgeComponent, BadgeButton } from '../../components/badge'
 import { Button as ButtonComponent } from '../../components/button'
 import { Link as LinkComponent } from '../../components/link'
 import { Text, TextLink } from '../../components/text'
-import { expect, within } from 'storybook/test'
+import { expect, userEvent, within } from 'storybook/test'
 import { ArrowTrendIcon, SparklesIcon } from '../support/icons'
 import { GuideCardGrid, GuideDemoFrame, GuidePage, GuideSection } from '../support/guide'
 
@@ -57,6 +57,7 @@ type ButtonColor =
   | 'amber'
   | 'yellow'
   | 'lime'
+  | 'brand'
   | 'green'
   | 'emerald'
   | 'teal'
@@ -73,6 +74,7 @@ type BadgeColor =
   | 'amber'
   | 'yellow'
   | 'lime'
+  | 'brand'
   | 'green'
   | 'emerald'
   | 'teal'
@@ -120,6 +122,7 @@ const buttonColorOptions: ButtonColor[] = [
   'amber',
   'yellow',
   'lime',
+  'brand',
   'green',
   'emerald',
   'teal',
@@ -134,6 +137,7 @@ const buttonColorOptions: ButtonColor[] = [
 
 const badgeColorOptions: BadgeColor[] = [
   'zinc',
+  'brand',
   'green',
   'emerald',
   'blue',
@@ -153,7 +157,7 @@ const badgeColorOptions: BadgeColor[] = [
   'pink',
 ]
 
-const emphasisColors = ['zinc', 'green', 'sky'] as const
+const emphasisColors = ['zinc', 'brand', 'sky'] as const
 
 function ButtonExamples() {
   return (
@@ -187,7 +191,7 @@ function ButtonExamples() {
           <div className="space-y-4 text-white">
             <p className="text-xs font-light uppercase tracking-[0.16em] text-zinc-400">Dark surface</p>
             <div className="flex flex-wrap gap-3">
-              <ButtonComponent color="green">Confirm selection</ButtonComponent>
+              <ButtonComponent color="brand">Confirm selection</ButtonComponent>
               <ButtonComponent color="white">Preview theme</ButtonComponent>
               <ButtonComponent outline>More options</ButtonComponent>
             </div>
@@ -210,7 +214,7 @@ function BadgeExamples() {
           <div className="space-y-4">
             <p className="text-xs font-light uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">Status tokens</p>
             <div className="flex flex-wrap gap-2">
-              <BadgeComponent color="green">Recommended</BadgeComponent>
+              <BadgeComponent color="brand">Recommended</BadgeComponent>
               <BadgeComponent color="blue">Informative</BadgeComponent>
               <BadgeComponent color="amber">Pending</BadgeComponent>
               <BadgeComponent color="rose">Limited run</BadgeComponent>
@@ -284,7 +288,7 @@ export const Button: StoryObj<ButtonPlaygroundArgs> = {
   ...withStoryDescription('Review hierarchy, color treatments, and dark-surface behavior for primary and secondary buttons.'),
   args: {
     children: 'Explore categories',
-    color: 'green',
+    color: 'brand',
     outline: false,
     plain: false,
     href: '',
@@ -321,7 +325,14 @@ export const Button: StoryObj<ButtonPlaygroundArgs> = {
   ),
   play: async ({ canvasElement, args }) => {
     const canvas = within(canvasElement)
-    await expect(canvas.getByText(args.children)).toBeVisible()
+    const button = canvas.getByRole('button', { name: args.children })
+    await expect(button).toBeVisible()
+
+    // Utilities must win over the resets in globals.css. Both checks fail if a reset leaves the base layer.
+    await expect(getComputedStyle(button).borderTopColor).toBe('rgba(0, 0, 0, 0)')
+    await userEvent.tab()
+    await expect(button).toHaveFocus()
+    await expect(getComputedStyle(button).outlineWidth).toBe('2px')
   },
 }
 
@@ -329,7 +340,7 @@ export const Badge: StoryObj<BadgePlaygroundArgs> = {
   ...withStoryDescription('Inspect compact status tokens and badge buttons used for lightweight actions.'),
   args: {
     label: 'Recommended',
-    color: 'green',
+    color: 'brand',
     interactive: false,
     href: '',
   },

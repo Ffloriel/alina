@@ -12,7 +12,7 @@ const styles = {
     // Motion
     'transition-[transform,background-color,color,border-color,box-shadow] duration-150 ease-out motion-reduce:transition-none motion-safe:active:scale-[0.985]',
     // Focus
-    'focus:not-data-focus:outline-hidden data-focus:outline-2 data-focus:outline-offset-2 data-focus:outline-blue-500',
+    'focus:not-data-focus:outline-hidden data-focus:outline-2 data-focus:outline-offset-2 data-focus:outline-focus',
     // Disabled
     'data-disabled:opacity-50',
     // Icon
@@ -89,6 +89,10 @@ const styles = {
       'dark:text-zinc-950 dark:[--btn-bg:var(--color-zinc-100)] dark:[--btn-hover-overlay:var(--color-white)]/40',
       '[--btn-icon:var(--color-zinc-700)] data-active:[--btn-icon:var(--color-zinc-900)] data-hover:[--btn-icon:var(--color-zinc-900)]',
     ],
+    brand: [
+      'text-brand-900 [--btn-hover-overlay:var(--color-white)]/18 [--btn-bg:var(--color-brand-400)] [--btn-border:var(--color-brand-500)]',
+      '[--btn-icon:var(--color-brand-700)] data-active:[--btn-icon:var(--color-brand-900)] data-hover:[--btn-icon:var(--color-brand-900)]',
+    ],
     indigo: [
       'text-indigo-950 [--btn-hover-overlay:var(--color-white)]/35 [--btn-bg:var(--color-indigo-200)] [--btn-border:var(--color-indigo-300)]/90',
       '[--btn-icon:var(--color-indigo-700)] data-active:[--btn-icon:var(--color-indigo-900)] data-hover:[--btn-icon:var(--color-indigo-900)]',
@@ -118,8 +122,8 @@ const styles = {
       '[--btn-icon:var(--color-lime-700)] data-active:[--btn-icon:var(--color-lime-900)] data-hover:[--btn-icon:var(--color-lime-900)]',
     ],
     green: [
-      '!text-[#334019] dark:!text-[#334019] [--btn-hover-overlay:rgba(255,255,255,0.18)] [--btn-bg:#b9c86f] [--btn-border:#9cab56]',
-      '[--btn-icon:#5a6a2e] data-active:[--btn-icon:#334019] data-hover:[--btn-icon:#334019] dark:[--btn-icon:#5a6a2e] dark:data-active:[--btn-icon:#334019] dark:data-hover:[--btn-icon:#334019]',
+      'text-green-950 [--btn-hover-overlay:var(--color-white)]/35 [--btn-bg:var(--color-green-200)] [--btn-border:var(--color-green-300)]/90',
+      '[--btn-icon:var(--color-green-700)] data-active:[--btn-icon:var(--color-green-900)] data-hover:[--btn-icon:var(--color-green-900)]',
     ],
     emerald: [
       'text-emerald-950 [--btn-hover-overlay:var(--color-white)]/35 [--btn-bg:var(--color-emerald-200)] [--btn-border:var(--color-emerald-300)]/90',

@@ -22,7 +22,7 @@ export const Textarea = forwardRef(function Textarea(
         // Background color is moved to control and shadow is removed in dark mode so hide `before` pseudo
         'dark:before:hidden',
         // Focus ring
-        'after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:ring-transparent after:ring-inset sm:focus-within:after:ring-2 sm:focus-within:after:ring-blue-500',
+        'after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:ring-transparent after:ring-inset focus-within:after:ring-2 focus-within:after:ring-focus',
         // Disabled state
         'has-data-disabled:opacity-50 has-data-disabled:before:bg-zinc-950/5 has-data-disabled:before:shadow-none',
       ])}
@@ -42,7 +42,7 @@ export const Textarea = forwardRef(function Textarea(
           // Hide default focus styles
           'focus:outline-hidden',
           // Invalid state
-          'data-invalid:border-red-500 data-invalid:data-hover:border-red-500 dark:data-invalid:border-red-600 dark:data-invalid:data-hover:border-red-600',
+          'data-invalid:border-negative-500 data-invalid:data-hover:border-negative-500 dark:data-invalid:border-negative-600 dark:data-invalid:data-hover:border-negative-600',
           // Disabled state
           'disabled:border-zinc-950/20 dark:disabled:border-white/15 dark:disabled:bg-white/[0.04] dark:data-hover:disabled:border-white/15',
           // Resizable

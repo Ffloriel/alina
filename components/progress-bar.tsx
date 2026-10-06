@@ -4,9 +4,9 @@ type Tone = 'neutral' | 'accent' | 'positive' | 'notice'
 
 const toneClasses: Record<Tone, string> = {
   neutral: 'bg-zinc-950 dark:bg-white',
-  accent: 'bg-[#8b9a48]',
-  positive: 'bg-emerald-500',
-  notice: 'bg-amber-500',
+  accent: 'bg-brand-600',
+  positive: 'bg-positive-500',
+  notice: 'bg-notice-500',
 }
 
 function clampProgress(value: number, max: number) {
@@ -46,9 +46,9 @@ export function ProgressBar({
         aria-valuemin={0}
         aria-valuenow={Math.min(Math.max(value, 0), max)}
         role="progressbar"
-        className="h-2.5 overflow-hidden rounded-full bg-zinc-950/8 dark:bg-white/10"
+        className="h-2.5 overflow-hidden rounded-sm bg-zinc-950/8 dark:bg-white/10"
       >
-        <div className={clsx('h-full rounded-full transition-[width] duration-300', toneClasses[tone])} style={{ width: `${percentage}%` }} />
+        <div className={clsx('h-full rounded-sm transition-[width] duration-300', toneClasses[tone])} style={{ width: `${percentage}%` }} />
       </div>
     </div>
   )

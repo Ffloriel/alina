@@ -58,7 +58,7 @@ export function AvatarGroup({
               <Link
                 href={item.href}
                 aria-label={item.alt}
-                className="inline-flex rounded-full focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+                className="inline-flex rounded-full focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus"
               >
                 {avatar}
               </Link>

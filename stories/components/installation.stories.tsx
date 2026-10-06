@@ -21,11 +21,12 @@ type Story = StoryObj<typeof meta>
 const installationSnippet = `This design system is not on npm at the moment.
 
 To use the components in another project:
-1. Copy the component source you need from this repository.
-2. Copy any directly imported local primitives or utilities that component depends on.
-3. Integrate the copied files into the consuming project's structure.
-4. Adapt routing, data fetching, and app-specific logic locally.
-5. Keep the copied version aligned with Storybook when the design system changes.`
+1. Copy the @theme block and the base layer from styles/globals.css. Components depend on its tokens.
+2. Copy the component source you need from this repository.
+3. Copy any directly imported local primitives or utilities that component depends on.
+4. Integrate the copied files into the consuming project's structure.
+5. Adapt routing, data fetching, and app-specific logic locally.
+6. Keep the copied version aligned with Storybook when the design system changes.`
 
 export const Overview: Story = {
   render: () => (
@@ -45,7 +46,7 @@ export const Overview: Story = {
         </GuideCardGrid>
         <GuideCodeBlock language="txt" code={installationSnippet} />
         <GuideCallout title="Important" tone="notice">
-          Copy only the components you need, but make sure you also bring over the local dependencies they import from this repository.
+          Copy only the components you need, but make sure you also bring over the local dependencies they import from this repository. Keep resets inside a cascade layer in the consuming project: unlayered rules such as a global border color or focus outline override every Tailwind utility the components use.
         </GuideCallout>
       </GuideSection>
     </GuidePage>

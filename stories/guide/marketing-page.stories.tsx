@@ -118,7 +118,7 @@ export const Overview: Story = {
         <div className="grid gap-10 px-4 py-8 sm:px-6 lg:grid-cols-[minmax(0,1fr)_24rem] lg:gap-16 lg:px-8 lg:py-12">
           <div className="space-y-10">
             <div className="space-y-6">
-              <Badge color="green">Concrete page example</Badge>
+              <Badge color="brand">Concrete page example</Badge>
               <div className="space-y-4">
                 <h1 className="max-w-4xl font-sans text-5xl font-extralight tracking-tight text-zinc-950 sm:text-6xl lg:text-7xl dark:text-white">
                   A calmer way to choose what deserves a place in your home.
@@ -128,7 +128,7 @@ export const Overview: Story = {
                 </Text>
               </div>
               <div className="flex flex-wrap gap-3">
-                <Button color="green" href="#categories">
+                <Button color="brand" href="#categories">
                   Explore the spring edit
                   <ArrowTrendIcon data-slot="icon" className="stroke-current" />
                 </Button>
@@ -162,7 +162,7 @@ export const Overview: Story = {
             <ul className="space-y-3">
               {editorialHighlights.map((item) => (
                 <li key={item} className="flex gap-3 text-sm/6 text-zinc-700 dark:text-zinc-200">
-                  <span className="mt-2 block h-1.5 w-1.5 rounded-full bg-[#8b9a48]" aria-hidden="true" />
+                  <span className="mt-2 block h-1.5 w-1.5 rounded-full bg-brand-600" aria-hidden="true" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -205,7 +205,7 @@ export const Overview: Story = {
 
       <section id="method" className="grid gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-10 lg:px-8">
         <div className="space-y-8 lg:space-y-10">
-          <div className="rounded-2xl bg-[radial-gradient(circle_at_top_left,rgba(74,222,128,0.22),transparent_45%),linear-gradient(160deg,rgba(250,250,249,1),rgba(244,244,245,1))] p-5 dark:bg-[radial-gradient(circle_at_top_left,rgba(74,222,128,0.18),transparent_45%),linear-gradient(160deg,rgba(24,24,27,1),rgba(10,10,10,1))]">
+          <div className="rounded-2xl bg-[radial-gradient(circle_at_top_left,--alpha(var(--color-brand-400)_/_22%),transparent_45%),linear-gradient(160deg,rgba(250,250,249,1),rgba(244,244,245,1))] p-5 dark:bg-[radial-gradient(circle_at_top_left,--alpha(var(--color-brand-400)_/_18%),transparent_45%),linear-gradient(160deg,rgba(24,24,27,1),rgba(10,10,10,1))]">
             <p className="text-xs font-light uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">Featured recommendation</p>
             <Heading level={3} className="mt-3 text-3xl font-extralight tracking-tight text-zinc-950 dark:text-white">
               One kitchen setup that does not ask for upgrading in six months.
@@ -225,10 +225,10 @@ export const Overview: Story = {
           </div>
         </div>
 
-        <div className="rounded-3xl bg-zinc-950 p-6 text-white dark:bg-zinc-900 lg:p-8">
+        <div className="dark rounded-3xl bg-zinc-950 p-6 text-white lg:p-8">
           <div className="space-y-5">
             <Badge color="blue">Editorial proof</Badge>
-            <blockquote className="[font-family:var(--font-display)] text-4xl tracking-tight text-white">
+            <blockquote className="font-display text-4xl tracking-tight text-white">
               “The page feels warm, but the decision still lands on evidence rather than decoration.”
             </blockquote>
             <div className="flex items-center gap-3">
@@ -261,7 +261,7 @@ export const Overview: Story = {
           </div>
         </div>
 
-        <div className="rounded-3xl bg-[linear-gradient(180deg,rgba(74,222,128,0.12),rgba(255,255,255,0.92))] p-6 dark:bg-[linear-gradient(180deg,rgba(74,222,128,0.12),rgba(24,24,27,0.92))] lg:p-8">
+        <div className="rounded-3xl bg-[linear-gradient(180deg,--alpha(var(--color-brand-400)_/_12%),rgba(255,255,255,0.92))] p-6 dark:bg-[linear-gradient(180deg,--alpha(var(--color-brand-400)_/_12%),rgba(24,24,27,0.92))] lg:p-8">
           <p className="text-xs font-light uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">Next step</p>
           <Heading level={3} className="mt-3 text-3xl font-extralight tracking-tight text-zinc-950 dark:text-white">
             Keep the page generous. Keep the decision sharp.
@@ -270,7 +270,7 @@ export const Overview: Story = {
             The point of this example is not the exact copy. It is the proof that the system can support a page with real merchandising weight while staying recognizably Full Human.
           </Text>
           <div className="mt-5 flex flex-wrap gap-3">
-            <Button color="green">Browse page patterns</Button>
+            <Button color="brand">Browse page patterns</Button>
             <Button plain href="#categories">
               Return to categories
             </Button>

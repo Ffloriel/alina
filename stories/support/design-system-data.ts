@@ -52,39 +52,39 @@ export const principleTable = [
 ] as const
 
 export const accentScale = [
-  ['accent-50', 'green-50', '#f0fdf4', 'Subtle backgrounds and tinted surfaces'],
-  ['accent-100', 'green-100', '#dcfce7', 'Hover backgrounds and highlighted areas'],
-  ['accent-200', 'green-200', '#bbf7d0', 'Decorative accents and light badges'],
-  ['accent-300', 'green-300', '#86efac', 'Active states and light illustration moments'],
-  ['accent-400', 'green-400', '#4ade80', 'Primary accent and default interactive color'],
-  ['accent-500', 'green-500', '#22c55e', 'Hover state for primary actions'],
-  ['accent-600', 'green-600', '#16a34a', 'Pressed and active states'],
-  ['accent-700', 'green-700', '#15803d', 'Stronger accent emphasis'],
-  ['accent-800', 'green-800', '#166534', 'High-contrast text on light surfaces'],
-  ['accent-900', 'green-900', '#14532d', 'Dark accent borders and text'],
-  ['accent-950', 'green-950', '#052e16', 'Dark mode accent surfaces'],
+  ['brand-50', '--color-brand-50', '#f5f8e8', 'Tinted surfaces and contextual help backgrounds'],
+  ['brand-100', '--color-brand-100', '#eef2da', 'Selected and current-item surfaces'],
+  ['brand-200', '--color-brand-200', '#dbe4b4', 'Selected surfaces in dark mode and badge fills'],
+  ['brand-300', '--color-brand-300', '#c4d38c', 'Selected rings and accent text in dark mode'],
+  ['brand-400', '--color-brand-400', '#b9c86f', 'Primary brand fill for buttons and checked controls'],
+  ['brand-500', '--color-brand-500', '#9cab56', 'Borders on brand fills'],
+  ['brand-600', '--color-brand-600', '#8b9a48', 'Progress fills and drag-over borders'],
+  ['brand-700', '--color-brand-700', '#5a6a2e', 'Icons on brand surfaces'],
+  ['brand-800', '--color-brand-800', '#4f5f24', 'Secondary text on brand surfaces'],
+  ['brand-900', '--color-brand-900', '#334019', 'Primary text on brand surfaces'],
+  ['brand-950', '--color-brand-950', '#1b2110', 'Brand surfaces in dark mode and checked indicators'],
 ] as const
 
 export const neutralScale = [
-  ['neutral-white', 'white', '#ffffff', 'Page background in light mode'],
-  ['neutral-50', 'neutral-50', '#fafafa', 'Alternate sections and subtle surfaces'],
-  ['neutral-100', 'neutral-100', '#f5f5f5', 'Cards and hover surfaces'],
-  ['neutral-200', 'neutral-200', '#e5e5e5', 'Borders and dividers'],
-  ['neutral-300', 'neutral-300', '#d4d4d4', 'Decorative borders and disabled accents'],
-  ['neutral-400', 'neutral-400', '#a3a3a3', 'Placeholder text and captions'],
-  ['neutral-500', 'neutral-500', '#737373', 'Secondary text'],
-  ['neutral-600', 'neutral-600', '#525252', 'Body text'],
-  ['neutral-700', 'neutral-700', '#404040', 'Primary body emphasis'],
-  ['neutral-800', 'neutral-800', '#262626', 'Headings and strong text'],
-  ['neutral-900', 'neutral-900', '#171717', 'Primary text'],
-  ['neutral-950', 'neutral-950', '#0a0a0a', 'High-emphasis text and dark backgrounds'],
+  ['white', '--color-white', '#ffffff', 'Page background in light mode'],
+  ['zinc-50', '--color-zinc-50', '#fafafa', 'Alternate sections and subtle surfaces'],
+  ['zinc-100', '--color-zinc-100', '#f4f4f5', 'Cards and hover surfaces'],
+  ['zinc-200', '--color-zinc-200', '#e4e4e7', 'Default borders and dividers'],
+  ['zinc-300', '--color-zinc-300', '#d4d4d8', 'Decorative borders and disabled accents'],
+  ['zinc-400', '--color-zinc-400', '#9f9fa9', 'Secondary text in dark mode'],
+  ['zinc-500', '--color-zinc-500', '#71717b', 'Secondary text, placeholders, and icons'],
+  ['zinc-600', '--color-zinc-600', '#52525c', 'Body text'],
+  ['zinc-700', '--color-zinc-700', '#3f3f46', 'Primary body emphasis'],
+  ['zinc-800', '--color-zinc-800', '#27272a', 'Default borders in dark mode'],
+  ['zinc-900', '--color-zinc-900', '#18181b', 'Dark buttons and dark-mode surfaces'],
+  ['zinc-950', '--color-zinc-950', '#09090b', 'Primary text and high-emphasis surfaces'],
 ] as const
 
 export const semanticColors = [
-  ['Positive', 'emerald-500', '#10b981', 'Success states, confirmations, checkmarks'],
-  ['Negative', 'red-500', '#ef4444', 'Errors, destructive actions, warnings'],
-  ['Notice', 'amber-500', '#f59e0b', 'Caution and attention states'],
-  ['Informative', 'blue-500', '#3b82f6', 'Links, informational banners, highlights'],
+  ['Positive', 'positive-500 (emerald)', '#00bc7d', 'Success states, confirmations, checkmarks'],
+  ['Negative', 'negative-500 (red)', '#fb2c36', 'Errors, invalid fields, destructive feedback'],
+  ['Notice', 'notice-500 (amber)', '#fe9a00', 'Caution and attention states'],
+  ['Informative', 'informative-500 (blue)', '#2b7fff', 'Informational banners and highlights'],
 ] as const
 
 export const tierColors = [
@@ -147,16 +147,19 @@ export const breakpoints = [
 ] as const
 
 export const semanticTokens = [
-  ['--color-bg-page', 'white', 'black', 'Page background'],
-  ['--color-bg-surface', 'white', 'neutral-900', 'Cards and surfaces'],
-  ['--color-bg-subtle', 'neutral-50', 'neutral-950', 'Alternate sections'],
-  ['--color-text-primary', 'neutral-900', 'neutral-100', 'Primary text'],
-  ['--color-text-secondary', 'neutral-600', 'neutral-400', 'Secondary text'],
-  ['--color-border-default', 'neutral-200', 'neutral-800', 'Default borders'],
-  ['--color-border-strong', 'black', 'white', 'Selected or active states'],
-  ['--color-accent', 'green-500', 'green-400', 'Primary accent'],
-  ['--color-positive', 'emerald-500', 'emerald-400', 'Success states'],
-  ['--color-negative', 'red-500', 'red-400', 'Error states'],
+  ['--color-background', 'white', '#050505', 'Page background. Utility: bg-background'],
+  ['--color-foreground', 'zinc-950', 'zinc-50', 'Default text. Utility: text-foreground'],
+  ['--color-border', 'zinc-200', 'zinc-800', 'Border color of any element that does not set its own'],
+  ['--color-focus', 'blue-500', 'blue-500', 'Focus rings. Utilities: outline-focus, ring-focus'],
+  ['--color-brand-50 to 950', 'Olive scale', 'Same scale', 'Brand fills, selected states, and accent text'],
+  ['--color-informative-50 to 950', 'blue', 'blue', 'Informative tone in banners, alerts, and toasts'],
+  ['--color-positive-50 to 950', 'emerald', 'emerald', 'Positive tone and success feedback'],
+  ['--color-notice-50 to 950', 'amber', 'amber', 'Notice tone and caution states'],
+  ['--color-negative-50 to 950', 'red', 'red', 'Negative tone, invalid fields, and error messages'],
+  ['--shadow-float', 'zinc-900 at 40%', 'black at 72%', 'Floating controls such as navbars, toasts, and tooltips'],
+  ['--shadow-panel', 'zinc-900 at 40%', 'black at 72%', 'Large content panels'],
+  ['--shadow-overlay', 'zinc-900 at 40%', 'black at 72%', 'Sheets and overlays above a backdrop'],
+  ['--shadow-selected', 'brand-700 at 60%', 'black at 78%', 'Selected and current-item indicators'],
 ] as const
 
 export const toneSpectrum = [
@@ -223,7 +226,7 @@ export const inclusiveWriting = [
 
 export const accessibilityChecklist = [
   ['Color contrast', 'Normal text must meet 4.5:1, large text 3:1, and UI components 3:1.'],
-  ['Focus states', 'Every interactive element needs a visible focus ring with enough offset to separate it from borders.'],
+  ['Focus states', 'Every interactive element shows a 2px focus ring in the focus color, offset 2px so it separates from borders.'],
   ['Semantic HTML', 'Use real headings, landmarks, links for navigation, and buttons for actions.'],
   ['Keyboard support', 'Tab navigation, escape to close overlays, and arrow-key support inside galleries and selection controls.'],
   ['Screen reader support', 'Use aria-label, aria-labelledby, aria-live, and hide decorative content with aria-hidden.'],
@@ -267,31 +270,31 @@ export const componentCatalog = [
 ] as const
 
 export const colorStateExamples = [
-  ['Background', 'emerald-50 (#ecfdf5)', 'emerald-950 (#022c22)'],
-  ['Border', 'emerald-200 (#a7f3d0)', 'emerald-800 (#065f46)'],
-  ['Text', 'emerald-700 (#047857)', 'emerald-300 (#6ee7b7)'],
-  ['Icon', 'emerald-500 (#10b981)', 'emerald-400 (#34d399)'],
+  ['Background', 'positive-50 at 90%', 'positive-950 at 35%'],
+  ['Border', 'positive-200 at 80%', 'positive-900 at 50%'],
+  ['Text', 'positive-950', 'positive-100'],
+  ['Indicator', 'positive-500', 'positive-500'],
 ] as const
 
 export const colorUsageRules = [
-  ['Use semantic colors for status', 'Use emerald-500 for a success checkmark.', 'Do not use the green brand accent for success messaging.'],
-  ['Use neutrals as the foundation', 'Use neutral-600 for body text and neutral-200 for borders.', 'Do not colorize structural copy or borders without a semantic reason.'],
+  ['Use semantic colors for status', 'Use positive-500 for a success checkmark.', 'Do not use the olive brand accent for success messaging.'],
+  ['Use neutrals as the foundation', 'Use zinc-600 for body text and zinc-950 at 10% for borders.', 'Do not colorize structural copy or borders without a semantic reason.'],
   ['Maintain contrast ratios', 'Keep normal text at 4.5:1 and large text or UI components at 3:1 minimum.', 'Do not ship low-contrast combinations that rely on ideal displays.'],
 ] as const
 
 export const darkModeSurfaceMap = [
-  ['Page background', 'white (#ffffff)', 'black (#000000)'],
-  ['Foreground text', 'neutral-950 (#0a0a0a)', 'neutral-50 (#fafafa)'],
-  ['Card background', 'white', 'neutral-900'],
-  ['Primary border', 'neutral-200', 'neutral-800'],
-  ['Subtle border', 'neutral-100', 'neutral-900'],
-  ['Accent surface', 'green-50', 'green-950'],
+  ['Page background', 'white (#ffffff)', '#050505'],
+  ['Foreground text', 'zinc-950 (#09090b)', 'zinc-50 (#fafafa)'],
+  ['Card background', 'white', 'zinc-900'],
+  ['Primary border', 'zinc-950 at 10%', 'white at 10%'],
+  ['Subtle border', 'zinc-950 at 5%', 'white at 5%'],
+  ['Accent surface', 'brand-100', 'brand-900 at 70%'],
 ] as const
 
 export const typefaceRoles = [
-  ['Geist', 'Primary headings, body, and UI', '--font-geist-sans', 'system-ui, -apple-system, sans-serif'],
-  ['Geist Mono', 'Code, data, and technical labels', '--font-geist-mono', 'ui-monospace, Menlo, Monaco, monospace'],
-  ['Instrument Serif', 'Editorial accents and expressive display moments', 'None', 'Georgia, "Times New Roman", serif'],
+  ['Geist', 'Primary headings, body, and UI', '--font-sans', 'system-ui, sans-serif'],
+  ['Geist Mono', 'Code, data, and technical labels', '--font-mono', 'ui-monospace, SFMono-Regular, Menlo, monospace'],
+  ['Instrument Serif', 'Editorial accents and expressive display moments', '--font-display', 'Georgia, serif'],
 ] as const
 
 export const lineHeights = [
@@ -357,20 +360,22 @@ export const headerNavigationSpec = [
 
 export const borderRadiusScale = [
   ['rounded-none', '0', 'Hard edges for dividers and edge-to-edge surfaces'],
+  ['rounded-sm', '2px', 'Progress and slider tracks, inline code'],
   ['rounded-md', '3px', 'Badges and compact indicators'],
   ['rounded-lg', '4px', 'Buttons, inputs, dropdown items, and default controls'],
   ['rounded-xl', '6px', 'Menus, cards, and content wrappers'],
   ['rounded-2xl', '8px', 'Large marketing panels and editorial callouts'],
-  ['rounded-3xl', '10px', 'Rare showcase surfaces that need a slightly softer frame'],
+  ['rounded-3xl', '10px', 'Rare showcase surfaces and sheets that need a slightly softer frame'],
+  ['rounded-4xl', '12px', 'Upper limit of the scale. Nothing in the system is rounder than this.'],
   ['rounded-full', '9999px', 'Circular controls only: avatars, radios, switches, and dots. Never use it for pill or capsule UI.'],
 ] as const
 
 export const borderStyles = [
-  ['Structural dividers', 'border-t border-neutral-100 dark:border-neutral-900', 'Section separators and footer top borders'],
-  ['Card borders', 'border border-neutral-200 dark:border-neutral-800', 'Product, category, and item cards'],
+  ['Structural dividers', 'border-t border-zinc-100 dark:border-zinc-900', 'Section separators and footer top borders'],
+  ['Card borders', 'border border-zinc-200 dark:border-zinc-800', 'Product, category, and item cards'],
   ['Active or selected', 'border-black dark:border-white', 'Selected preference options'],
-  ['Hover border', 'hover:border-neutral-300 dark:hover:border-neutral-700', 'Card hover states'],
-  ['Inner dividers', 'border-b border-neutral-100 dark:border-neutral-800', 'Sections inside larger cards'],
+  ['Hover border', 'hover:border-zinc-300 dark:hover:border-zinc-700', 'Card hover states'],
+  ['Inner dividers', 'border-b border-zinc-100 dark:border-zinc-800', 'Sections inside larger cards'],
 ] as const
 
 export const shadowStates = [
@@ -381,7 +386,7 @@ export const shadowStates = [
 
 export const transparentBackgrounds = [
   ['Header', 'bg-white/90 dark:bg-black/90', 'Fixed navigation bar'],
-  ['Image nav button', 'bg-white/80 dark:bg-neutral-900/80', 'Gallery navigation'],
+  ['Image nav button', 'bg-white/80 dark:bg-zinc-900/80', 'Gallery navigation'],
 ] as const
 
 export const opacityPatterns = [
@@ -525,22 +530,15 @@ export const responsiveNavigation = [
 ] as const
 
 export const tokenArchitecture = [
-  ['Global tokens', 'Raw Tailwind values such as neutral-500, text-sm, and p-6.'],
-  ['Semantic tokens', 'Purpose-driven aliases such as bg-page, text-body, and border-card.'],
-] as const
-
-export const currentCssVariableRows = [
-  ['--background', '#ffffff', '#000000', 'Page background'],
-  ['--foreground', '#0a0a0a', '#fafafa', 'Foreground text'],
-  ['--font-sans', 'var(--font-geist-sans)', 'var(--font-geist-sans)', 'Primary sans font'],
-  ['--font-mono', 'var(--font-geist-mono)', 'var(--font-geist-mono)', 'Monospace font'],
+  ['Global tokens', 'Raw Tailwind values such as zinc-500, text-sm, and p-6.'],
+  ['Semantic tokens', 'Purpose-driven aliases defined in the @theme block of styles/globals.css, such as brand-400, negative-600, bg-background, and shadow-float.'],
 ] as const
 
 export const tokenNamingExamples = [
-  ['--color-bg-page', 'Context: color, property: background, modifier: page'],
-  ['--color-text-secondary', 'Context: color, property: text, modifier: secondary'],
-  ['--color-border-subtle', 'Context: color, property: border, modifier: subtle'],
-  ['--space-section-y', 'Context: space, property: section, modifier: vertical axis'],
+  ['--color-brand-400', 'Namespace: color, role: brand, step: 400. Utilities: bg-brand-400, text-brand-400'],
+  ['--color-negative-600', 'Namespace: color, role: negative status, step: 600. Utility: text-negative-600'],
+  ['--shadow-float', 'Namespace: shadow, role: floating controls. Utility: shadow-float'],
+  ['--radius-lg', 'Namespace: radius, step: lg. Utility: rounded-lg'],
 ] as const
 
 export const navigationSpec = [
@@ -549,46 +547,46 @@ export const navigationSpec = [
   ['Background', 'white/90 with backdrop-blur-sm'],
   ['Logo', 'text-sm font-light tracking-[0.3em] uppercase'],
   ['Nav links', 'Compact links with restrained corners that can wrap or switch to a section grid on mobile; never use pill or capsule styling'],
-  ['Link color', 'text-neutral-600 to text-black on hover'],
+  ['Link color', 'text-zinc-600 to text-black on hover'],
 ] as const
 
 export const categoryCardSpec = [
   ['Background', 'bg-white dark:bg-black'],
   ['Padding', 'p-12'],
-  ['Hover', 'Background shifts to neutral-50 or neutral-950'],
+  ['Hover', 'Background shifts to zinc-50 or zinc-950'],
   ['Transition', 'transition-colors duration-500'],
   ['Icon', 'text-5xl opacity-30 to opacity-60 on hover'],
   ['Title', 'text-xl font-light'],
-  ['Description', 'text-sm font-light text-neutral-500'],
+  ['Description', 'text-sm font-light text-zinc-500'],
   ['CTA', 'text-xs tracking-[0.15em] uppercase with arrow'],
 ] as const
 
 export const itemCardSpec = [
-  ['Background', 'bg-white dark:bg-neutral-900'],
+  ['Background', 'bg-white dark:bg-zinc-900'],
   ['Border radius', 'rounded-lg'],
-  ['Border', 'border-neutral-200 to border-neutral-300 on hover'],
+  ['Border', 'border-zinc-200 to border-zinc-300 on hover'],
   ['Padding', 'p-5'],
   ['Shadow', 'hover:shadow-md'],
   ['Title', 'font-semibold'],
-  ['Description', 'text-sm text-neutral-600 line-clamp-2'],
+  ['Description', 'text-sm text-zinc-600 line-clamp-2'],
 ] as const
 
 export const productCardSpec = [
-  ['Background', 'bg-white dark:bg-neutral-900'],
+  ['Background', 'bg-white dark:bg-zinc-900'],
   ['Border radius', 'rounded-xl'],
-  ['Border', 'border-neutral-200 dark:border-neutral-800'],
+  ['Border', 'border-zinc-200 dark:border-zinc-800'],
   ['Shadow', 'hover:shadow-lg'],
-  ['Sections', 'Divided by border-b border-neutral-100 dark:border-neutral-800'],
+  ['Sections', 'Divided by border-b border-zinc-100 dark:border-zinc-800'],
   ['Section padding', 'p-6'],
-  ['Brand text', 'text-sm text-neutral-500'],
+  ['Brand text', 'text-sm text-zinc-500'],
   ['Product name', 'text-lg font-semibold'],
   ['Price', 'text-xl font-semibold'],
   ['Tier badge', 'px-3 py-1 rounded-md text-xs font-medium with tier color'],
 ] as const
 
 export const preferenceControlSpec = [
-  ['Default', 'border border-neutral-200 dark:border-neutral-800'],
-  ['Hover', 'hover:border-neutral-400 dark:hover:border-neutral-600'],
+  ['Default', 'border border-zinc-200 dark:border-zinc-800'],
+  ['Hover', 'hover:border-zinc-400 dark:hover:border-zinc-600'],
   ['Selected', 'border-black dark:border-white'],
   ['Text', 'text-xs tracking-[0.1em] uppercase'],
   ['Padding', 'p-3'],
@@ -596,18 +594,18 @@ export const preferenceControlSpec = [
 
 export const imageGallerySpec = [
   ['Container', 'aspect-square with overflow-hidden'],
-  ['Nav buttons', 'rounded-md p-1.5 bg-white/80 dark:bg-neutral-900/80'],
-  ['Dot inactive', 'w-2 h-2 rounded-full bg-neutral-400'],
-  ['Dot active', 'w-2 h-2 rounded-full bg-neutral-900 dark:bg-white'],
+  ['Nav buttons', 'rounded-md p-1.5 bg-white/80 dark:bg-zinc-900/80'],
+  ['Dot inactive', 'w-2 h-2 rounded-full bg-zinc-400'],
+  ['Dot active', 'w-2 h-2 rounded-full bg-zinc-900 dark:bg-white'],
 ] as const
 
 export const footerSpec = [
-  ['Border', 'border-t border-neutral-100 dark:border-neutral-900'],
+  ['Border', 'border-t border-zinc-100 dark:border-zinc-900'],
   ['Padding', 'py-16'],
   ['Grid', '3 short-link columns plus 1 newsletter column on desktop'],
-  ['Section headings', 'text-xs font-light tracking-[0.2em] uppercase text-neutral-400'],
-  ['Links', 'text-sm font-light text-neutral-600 to text-black on hover'],
-  ['Copyright', 'text-xs font-light text-neutral-400 tracking-wide'],
+  ['Section headings', 'text-xs font-light tracking-[0.2em] uppercase text-zinc-400'],
+  ['Links', 'text-sm font-light text-zinc-600 to text-black on hover'],
+  ['Copyright', 'text-xs font-light text-zinc-400 tracking-wide'],
 ] as const
 
 export const componentInventory = [
@@ -678,11 +676,11 @@ styles/
   globals.css           <- Tailwind import, fonts, and design tokens`
 
 export const selectionCssSnippet = `::selection {
-  background: rgba(0, 0, 0, 0.1);
+  background: --alpha(var(--color-zinc-900) / 12%);
 }
 
 .dark ::selection {
-  background: rgba(255, 255, 255, 0.15);
+  background: --alpha(var(--color-white) / 18%);
 }`
 
 export const fadeInCssSnippet = `@keyframes fadeIn {
@@ -698,9 +696,9 @@ export const buttonPressCssSnippet = `<Button className="motion-safe:active:scal
   Save changes
 </Button>`
 
-export const focusCssSnippet = `*:focus-visible {
-  outline: 1px solid currentColor;
-  outline-offset: 3px;
+export const focusCssSnippet = `:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
 }`
 
 export const reducedMotionCssSnippet = `@media (prefers-reduced-motion: reduce) {
@@ -711,10 +709,10 @@ export const reducedMotionCssSnippet = `@media (prefers-reduced-motion: reduce) 
   }
 }`
 
-export const breadcrumbsHtmlSnippet = `<nav class="flex items-center gap-2 text-xs font-light tracking-wide text-neutral-400">
+export const breadcrumbsHtmlSnippet = `<nav class="flex items-center gap-2 text-xs font-light tracking-wide text-zinc-400">
   <a class="underline-offset-4 transition-[color,text-decoration-color] hover:text-black hover:underline dark:hover:text-white">Home</a>
   <span>/</span>
   <span class="text-black dark:text-white">Current page</span>
 </nav>`
 
-export const loadingStateHtmlSnippet = `<div class="bg-neutral-100 dark:bg-neutral-800 rounded-xl h-96 animate-pulse" />`
+export const loadingStateHtmlSnippet = `<div class="bg-zinc-100 dark:bg-zinc-800 rounded-xl h-96 animate-pulse" />`

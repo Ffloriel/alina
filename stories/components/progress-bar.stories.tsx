@@ -110,7 +110,7 @@ export const InUse: Story = {
               <Text className="text-sm/6 text-zinc-600 dark:text-zinc-300">
                 A progress bar belongs in structured flows like onboarding because the reader benefits from knowing how much sequence remains.
               </Text>
-              <Button color="green">Continue to delivery preferences</Button>
+              <Button color="brand">Continue to delivery preferences</Button>
             </div>
           </div>
         </div>

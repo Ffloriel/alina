@@ -3,7 +3,6 @@ import {
   accessibilityChecklist,
   accessibilityContrast,
   breakpoints,
-  currentCssVariableRows,
   focusCssSnippet,
   keyboardNavigationRules,
   reducedMotionCssSnippet,
@@ -28,17 +27,19 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-const currentCssVariablesSnippet = `:root {
-  --background: #ffffff;
-  --foreground: #0a0a0a;
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+const themeTokensSnippet = `@theme static {
+  --color-brand-400: #b9c86f;
+  --color-negative-500: var(--color-red-500);
+  --color-background: #ffffff;
+  --color-foreground: var(--color-zinc-950);
+  --color-focus: var(--color-blue-500);
+  --shadow-float: 0 20px 45px -32px var(--elevation-tint);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --foreground: #fafafa;
+@layer base {
+  .dark {
+    --color-background: #050505;
+    --color-foreground: var(--color-zinc-50);
   }
 }`
 
@@ -61,7 +62,7 @@ export const Accessibility: Story = {
         <GuideDemoFrame>
           <div className="space-y-4">
             <p className="text-xs font-light uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">Focus example</p>
-            <button className="rounded-lg border border-zinc-950/10 bg-white/75 px-4 py-2 text-sm text-zinc-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-500 dark:border-white/15 dark:bg-zinc-900 dark:text-white dark:focus-visible:outline-emerald-400">
+            <button className="rounded-lg border border-zinc-950/10 bg-white/75 px-4 py-2 text-sm text-zinc-950 dark:border-white/15 dark:bg-zinc-900 dark:text-white">
               Visible focus is required
             </button>
           </div>
@@ -99,11 +100,10 @@ export const Accessibility: Story = {
       <GuideSection
         eyebrow="Design tokens"
         title="Semantic mapping keeps the system scalable"
-        summary="The current implementation uses Tailwind utility classes directly, but the written system already defines the semantic aliases the team should converge on as it grows."
+        summary="Tokens live in the @theme block of styles/globals.css. Each one is both a CSS variable and a Tailwind utility, so components never hard-code a brand, status, focus, or elevation value."
       >
         <GuideTable columns={['Token tier', 'Definition']} rows={tokenArchitecture} />
-        <GuideCodeBlock language="css" code={currentCssVariablesSnippet} />
-        <GuideTable columns={['CSS variable', 'Light value', 'Dark value', 'Usage']} rows={currentCssVariableRows} />
+        <GuideCodeBlock language="css" code={themeTokensSnippet} />
         <GuideTable columns={['Semantic token', 'Light value', 'Dark value', 'Usage']} rows={semanticTokens} />
         <GuideTable columns={['Example', 'Meaning']} rows={tokenNamingExamples} />
         <GuideCallout title="Token strategy" tone="notice">

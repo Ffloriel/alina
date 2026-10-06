@@ -118,7 +118,7 @@ function NavbarExamples() {
     >
       <GuideDemoFrame>
         <div className="space-y-6">
-          <NavbarComponent>
+          <NavbarComponent aria-label="Primary">
             <NavbarSection>
               <NavbarItem href="#" current>
                 <HomeIcon data-slot="icon" className="fill-current" />
@@ -145,7 +145,7 @@ function NavbarExamples() {
 
           <div className="max-w-md space-y-3">
             <p className="text-xs font-light uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">Mobile section pattern</p>
-            <NavbarComponent>
+            <NavbarComponent aria-label="Sections">
               <NavbarSection className="grid w-full grid-cols-3 md:flex md:w-auto">
                 <NavbarItem fullWidth href="#" current>
                   <NavbarLabel>Categories</NavbarLabel>

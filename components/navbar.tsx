@@ -13,7 +13,7 @@ export function Navbar({ className, ...props }: React.ComponentPropsWithoutRef<'
       {...props}
       className={clsx(
         className,
-        'flex w-full min-w-0 flex-col items-stretch gap-1.5 rounded-2xl border border-zinc-950/10 bg-white/80 p-1.5 font-sans shadow-[0_20px_45px_-32px_rgba(23,23,23,0.45)] backdrop-blur-xl md:flex-row md:items-center md:gap-2 md:rounded-xl dark:border-white/10 dark:bg-zinc-950/75 dark:shadow-[0_20px_45px_-32px_rgba(0,0,0,0.75)]'
+        'flex w-full min-w-0 flex-col items-stretch gap-1.5 rounded-2xl border border-zinc-950/10 bg-white/80 p-1.5 font-sans shadow-float backdrop-blur-xl md:flex-row md:items-center md:gap-2 md:rounded-xl dark:border-white/10 dark:bg-zinc-950/75'
       )}
     />
   )
@@ -61,7 +61,7 @@ export const NavbarItem = forwardRef(function NavbarItem(
     '*:data-[slot=avatar]:-m-0.5 *:data-[slot=avatar]:size-7 *:data-[slot=avatar]:[--avatar-radius:var(--radius-md)] md:*:data-[slot=avatar]:size-6',
     fullWidth && 'w-full',
     current
-      ? 'text-[#334019] *:data-[slot=icon]:fill-[#5a6a2e] dark:text-[#e7eccd] dark:*:data-[slot=icon]:fill-[#c4d38c]'
+      ? 'text-brand-900 *:data-[slot=icon]:fill-brand-700 dark:text-brand-100 dark:*:data-[slot=icon]:fill-brand-300'
       : 'text-zinc-600 *:data-[slot=icon]:fill-zinc-500 data-hover:bg-white/70 data-hover:text-zinc-950 data-hover:*:data-[slot=icon]:fill-zinc-950 data-active:bg-white/70 data-active:text-zinc-950 data-active:*:data-[slot=icon]:fill-zinc-950 dark:text-zinc-200 dark:*:data-[slot=icon]:fill-zinc-400 dark:data-hover:bg-white/8 dark:data-hover:text-white dark:data-hover:*:data-[slot=icon]:fill-white dark:data-active:bg-white/8 dark:data-active:text-white dark:data-active:*:data-[slot=icon]:fill-white'
   )
 
@@ -70,7 +70,7 @@ export const NavbarItem = forwardRef(function NavbarItem(
       {current && (
         <motion.span
           layoutId="current-indicator"
-          className="absolute inset-0 rounded-xl bg-[#eef2da] shadow-[0_14px_34px_-24px_rgba(90,106,46,0.8)] ring-1 ring-[#d2dba8] md:rounded-lg dark:bg-[#3c4724] dark:ring-[#677645]/70"
+          className="absolute inset-0 rounded-xl bg-brand-100 shadow-selected ring-1 ring-brand-300 md:rounded-lg dark:bg-brand-900/70 dark:ring-brand-700/60"
         />
       )}
       {typeof props.href === 'string' ? (

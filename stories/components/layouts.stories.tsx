@@ -204,7 +204,7 @@ function ExampleStackedNavbar({ currentLocation }: { currentLocation: CurrentLoc
 
 function ExampleSidebar({ currentLocation }: { currentLocation: CurrentLocation }) {
   return (
-    <Sidebar className="overflow-hidden rounded-2xl border border-zinc-950/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(244,244,245,0.94))] shadow-[0_30px_80px_-46px_rgba(23,23,23,0.28)] max-lg:rounded-none max-lg:border-0 max-lg:bg-transparent max-lg:shadow-none dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(24,24,27,0.98),rgba(10,10,10,0.96))] dark:shadow-[0_30px_80px_-46px_rgba(0,0,0,0.68)]">
+    <Sidebar className="overflow-hidden rounded-2xl border border-zinc-950/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(244,244,245,0.94))] shadow-panel max-lg:rounded-none max-lg:border-0 max-lg:bg-transparent max-lg:shadow-none dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(24,24,27,0.98),rgba(10,10,10,0.96))]">
       <SidebarHeader className="border-zinc-950/10 bg-white/45 max-lg:bg-transparent dark:border-white/10 dark:bg-white/5 dark:max-lg:bg-transparent">
         <div className="flex items-center gap-3 px-1.5 pb-2 sm:px-2 sm:pb-3">
           <FullHumanLogo className="h-8 w-auto text-zinc-950 dark:text-white" />
@@ -239,8 +239,8 @@ function ExampleSidebar({ currentLocation }: { currentLocation: CurrentLocation 
         </SidebarSection>
       </SidebarBody>
       <SidebarFooter className="hidden border-zinc-950/10 lg:flex dark:border-white/10">
-        <div className="rounded-2xl bg-zinc-950 p-4 text-white dark:bg-black/70">
-          <Badge color="green">Live review</Badge>
+        <div className="dark rounded-2xl bg-zinc-950 p-4 text-white">
+          <Badge color="brand">Live review</Badge>
           <p className="mt-3 text-sm font-medium text-white">Seven markets changed this morning.</p>
           <p className="mt-2 text-sm/6 text-zinc-300">Keep the queue visible while the main surface carries the reasoning and next action.</p>
         </div>
@@ -304,7 +304,7 @@ function SidebarLayoutInUsePage() {
             Sidebar layouts work best when navigation needs to stay visible for the whole session and the main surface keeps changing between detail, review, and action.
           </Text>
           <div className="flex flex-wrap gap-3">
-            <Button color="green">Create watchlist</Button>
+            <Button color="brand">Create watchlist</Button>
             <Button outline>Export report</Button>
           </div>
         </div>
@@ -351,9 +351,9 @@ function SidebarLayoutInUsePage() {
             <p className="text-xs font-light uppercase tracking-[0.16em] text-zinc-500">Team note</p>
             <p className="mt-3 text-sm/6 text-zinc-600 dark:text-zinc-300">Keep the sidebar steady for workspaces where people revisit the same destinations all day and need a persistent sense of place.</p>
           </div>
-          <div className="rounded-2xl bg-zinc-950 p-6 text-white dark:bg-black/70">
+          <div className="dark rounded-2xl bg-zinc-950 p-6 text-white">
             <Badge color="blue">Why this shell</Badge>
-            <p className="mt-4 [font-family:var(--font-display)] text-3xl tracking-tight text-white">Persistent navigation makes the queue feel calmer, not heavier.</p>
+            <p className="mt-4 font-display text-3xl tracking-tight text-white">Persistent navigation makes the queue feel calmer, not heavier.</p>
             <p className="mt-4 text-sm/6 text-zinc-300">The main surface can change substantially while the reader always knows where they are and where the adjacent work lives.</p>
           </div>
         </div>
@@ -424,9 +424,9 @@ function StackedLayoutInUsePage() {
             <p className="mt-3 text-sm font-medium text-zinc-950 dark:text-white">Thursday, 14:00 CET</p>
             <p className="mt-2 text-sm/6 text-zinc-600 dark:text-zinc-300">Use the broader top navigation when the page is less about one queue and more about scanning multiple thematic surfaces.</p>
           </div>
-          <div className="rounded-2xl bg-zinc-950 p-6 text-white dark:bg-black/70">
-            <Badge color="green">Best fit</Badge>
-            <p className="mt-4 [font-family:var(--font-display)] text-3xl tracking-tight text-white">Top navigation works when the body is the main stage.</p>
+          <div className="dark rounded-2xl bg-zinc-950 p-6 text-white">
+            <Badge color="brand">Best fit</Badge>
+            <p className="mt-4 font-display text-3xl tracking-tight text-white">Top navigation works when the body is the main stage.</p>
             <p className="mt-4 text-sm/6 text-zinc-300">This shell keeps major destinations available without creating a persistent second column that the page does not need.</p>
           </div>
         </div>

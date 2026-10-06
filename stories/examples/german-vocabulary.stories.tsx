@@ -41,14 +41,14 @@ const sectionLinks = [
 ] as const
 
 const selectedControlClasses =
-  'border-[#d2dba8] bg-[#eef2da] text-[#334019] dark:border-[#9cab56] dark:bg-[#b9c86f] dark:text-[#334019]'
+  'border-brand-300 bg-brand-100 text-brand-900 dark:border-brand-500 dark:bg-brand-400 dark:text-brand-900'
 
 const selectedCardClasses =
-  'border-[#d2dba8] bg-[#eef2da]/70 text-[#334019] shadow-[0_14px_34px_-24px_rgba(90,106,46,0.45)] dark:border-[#9cab56] dark:bg-[#b9c86f]/88 dark:text-[#334019]'
+  'border-brand-300 bg-brand-100/70 text-brand-900 shadow-selected dark:border-brand-500 dark:bg-brand-400/88 dark:text-brand-900'
 
-const selectedMutedTextClasses = 'text-[#4f5f24] dark:text-[#334019]'
+const selectedMutedTextClasses = 'text-brand-800 dark:text-brand-900'
 
-const selectedBadgeClasses = 'bg-[#dbe4b4] text-[#4f5f24] dark:bg-[#a8ba63]/55 dark:text-[#334019]'
+const selectedBadgeClasses = 'bg-brand-200 text-brand-800 dark:bg-brand-500/55 dark:text-brand-900'
 
 const totalWords = vocabularyCategories.reduce((sum, category) => sum + category.count, 0)
 const learnedWords = 0
@@ -98,7 +98,7 @@ function GermanVocabularyHomePage() {
         <div className="grid gap-10 px-4 py-8 sm:px-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-14 lg:px-8 lg:py-12">
           <div className="space-y-10">
             <div className="space-y-6">
-              <Badge color="green">B2 practice session</Badge>
+              <Badge color="brand">B2 practice session</Badge>
               <div className="space-y-4">
                 <h1 className="max-w-4xl font-sans text-5xl font-extralight tracking-tight text-zinc-950 sm:text-6xl lg:text-7xl dark:text-white">
                   German Vocabulary Quiz
@@ -108,7 +108,7 @@ function GermanVocabularyHomePage() {
                 </Text>
               </div>
               <div className="flex flex-wrap gap-3">
-                <Button color="green" href="#categories">
+                <Button color="brand" href="#categories">
                   Start quiz
                   <ArrowTrendIcon data-slot="icon" className="stroke-current" />
                 </Button>
@@ -252,7 +252,7 @@ function GermanVocabularyHomePage() {
               )
             })}
           </div>
-          <Button color="green" className="w-full justify-center" disabled={selectedCategoryIds.length === 0}>
+          <Button color="brand" className="w-full justify-center" disabled={selectedCategoryIds.length === 0}>
             Start quiz
           </Button>
         </div>

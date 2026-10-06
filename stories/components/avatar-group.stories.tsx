@@ -111,7 +111,7 @@ export const InUse: Story = {
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-start">
           <div className="space-y-6 rounded-2xl border border-zinc-950/10 bg-white/78 p-6 dark:border-white/10 dark:bg-zinc-950/68 lg:p-8">
             <div className="flex flex-wrap items-center gap-3">
-              <Badge color="green">Ready for sign-off</Badge>
+              <Badge color="brand">Ready for sign-off</Badge>
               <AvatarGroup items={reviewTeam.map((person) => ({ ...person }))} limit={4} />
             </div>
 
@@ -142,7 +142,7 @@ export const InUse: Story = {
             </div>
 
             <div className="flex flex-wrap gap-3">
-              <Button color="green">Approve copy</Button>
+              <Button color="brand">Approve copy</Button>
               <Button outline>Request changes</Button>
             </div>
           </div>

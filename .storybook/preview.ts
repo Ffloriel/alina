@@ -43,6 +43,9 @@ const preview: Preview = {
     backgrounds: {
       disable: true,
     },
+    a11y: {
+      test: 'error',
+    },
   },
   initialGlobals: {
     viewport: {

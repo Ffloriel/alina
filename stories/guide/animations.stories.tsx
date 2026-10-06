@@ -60,7 +60,7 @@ export const Overview: Story = {
             <div className="space-y-5">
               <p className="text-xs font-light uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">Button press feedback</p>
               <div className="flex flex-wrap gap-3">
-                <Button color="green">Save changes</Button>
+                <Button color="brand">Save changes</Button>
                 <Button outline>Preview update</Button>
                 <Button plain>Dismiss note</Button>
               </div>
